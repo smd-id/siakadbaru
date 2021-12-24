@@ -1,17 +1,8 @@
 
-<script src="<?= base_url('assets/js/');?>jquery.magnify.js"></script>
 <script type="text/javascript">
 var table;
 
 $(document).ready(function() {
-    
-    $("[data-magnify=struk]").magnify({
-        draggable: false,
-        resizable: false,
-        movable: false,
-        modalWidth: 500,
-        modalHeight: 500,
-    });
 
     //datatables
     table = $('#table').DataTable({
@@ -39,12 +30,12 @@ $(document).ready(function() {
 });
 
 
-function konfirmasi(id)
+function update_data(id)
 {
     Swal.fire({
             title: 'Anda Yakin ?',
             html: "Mengkonfirmasi Pembayaran ini",
-            icon: 'info',
+            icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
@@ -53,7 +44,7 @@ function konfirmasi(id)
         if (result.value) {
             // ajax delete data to database
             $.ajax({
-                url : "<?php echo site_url('konfirmasipsb/ajax_confirm') ?>/"+id,
+                url : "<?php echo site_url('konfirmasipsb/ajax_delete') ?>/"+id,
                 type: "POST",
                 dataType: "JSON",
                 success: function(data)
@@ -69,38 +60,6 @@ function konfirmasi(id)
         }
     })
 }
-
-function reject(id)
-{
-    Swal.fire({
-            title: 'Anda Yakin ?',
-            html: "Menolak Pembayaran ini",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, reject it!'
-    }).then((result) => {
-        if (result.value) {
-            // ajax delete data to database
-            $.ajax({
-                url : "<?php echo site_url('konfirmasipsb/ajax_reject') ?>/"+id,
-                type: "POST",
-                dataType: "JSON",
-                success: function(data)
-                {
-                    reload_table();
-                    mySwalalert('Berhasil Konfirmasi Data', 'success');
-                },
-                error: function (jqXHR, textStatus, errorThrown)
-                {
-                    mySwalalert('Gagal Konfirmasi Data', 'error');
-                }
-            });
-        }
-    })
-}
-
 
 function reload_table()
 {

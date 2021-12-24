@@ -19,8 +19,6 @@
 <!-- AdminLTE App -->
 <script src="<?=base_url('assets/');?>js/adminlte.js"></script>
 
-<script src="<?=base_url('assets/');?>js/ekko-lightbox.js"></script>
-
 <!-- Select2 -->
 <script src="<?=base_url('assets/');?>plugins/select2/js/select2.full.min.js"></script>
 
@@ -30,7 +28,7 @@
 <!-- script nestable -->
 <script src="<?=base_url('vendor/nestable/jquery.nestable.js')?>"></script>
 
-<!-- default dealer -->
+<!-- default Siakad -->
 <script src="<?=base_url('assets/');?>js/default-siakad.js"></script>
 
 <!-- <script>

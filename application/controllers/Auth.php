@@ -84,10 +84,6 @@ class Auth extends CI_Controller
             'name' =>  $this->input->post('fullname'),
             'username' =>  $this->input->post('username'),
             'password' =>  password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-            'honda_id' =>  '0',
-            'role_id' =>  '99',
-            'whatsapp' =>  '0',
-            'inisial' =>  '-',
             'profile_picture' =>  'default.png',
             'status' =>  '0'
         ];

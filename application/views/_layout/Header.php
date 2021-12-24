@@ -35,16 +35,16 @@
     <link rel="stylesheet" href="<?=base_url('assets/');?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?=base_url('assets/');?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 
-    <!-- Lightbox -->
-    <link href="<?=base_url('assets/');?>js/ekko-lightbox.css" rel="stylesheet" />
-
     <!-- Nestable -->
-    <link href="<?=base_url('vendor/nestable/jquery.nestable.css')?>" rel="stylesheet">
+    <link href="<?=base_url('vendor/nestable/jquery.nestable.css');?>" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" href="<?= base_url('assets/'); ?>img/logo/logo-only.png" type="image/png">
     
     <!-- Costum CSS Location -->
+    
+    <!-- Magnify -->
+    <link href="<?=base_url('assets/css/');?>jquery.magnify.css" rel="stylesheet">
     
     <?php
         if (!empty($costum_css)) {

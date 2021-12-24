@@ -14,7 +14,7 @@ class M_Konfirmasi extends CI_Model
     {
 
         $this->db->from($this->table);
-        $this->db->join ('file_psb', 'file_psb.nik = peserta_psb.nik');
+        $this->db->where('s_payment', '3');
 
         $i = 0;
 
@@ -72,7 +72,6 @@ class M_Konfirmasi extends CI_Model
     }
     // END OF DATATABLE QUERY
 
-    // Proses Modal
     public function get($id)
     {
         $this->db->where('id', $id);
@@ -81,10 +80,22 @@ class M_Konfirmasi extends CI_Model
         return $query->row();
     }
     
-    public function update($data)
+    public function update($id, $data)
     {
+        $this->db->where('id', $id);
         $this->db->update($this->table, $data);
         return $this->db->affected_rows();
+    }
+
+    public function get_file($nik)
+    {
+        $query = $this->db
+        ->select('*')
+        ->from ('peserta_psb')
+        ->join ('file_psb', 'file_psb.nik = peserta_psb.nik')
+        ->where("peserta_psb.nik",$nik)
+        ->get();
+        return $query;
     }
     
 }
