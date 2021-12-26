@@ -76,7 +76,10 @@ class M_Role extends CI_Model
     public function getall()
     {
         $this->db->from($this->table);
-        return $this->db->get();
+        $this->db->where('status', '1');
+        $query = $this->db->get();
+
+        return $query->result();
     }
     public function get_by_id($id)
     {

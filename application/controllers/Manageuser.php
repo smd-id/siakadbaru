@@ -18,7 +18,6 @@ class Manageuser extends CI_Controller
         $data = [
             'title' => 'User List',
             'content' => 'Administrator/manageuser/index',
-            'role' => $this->M_Role->getall()->result_array(),
             'costum_js' => 'Administrator/manageuser/js-datatable',
         ];
         echo $this->template->views($data);

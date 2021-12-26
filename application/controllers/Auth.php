@@ -81,24 +81,35 @@ class Auth extends CI_Controller
     public function doregister()
     {
         $data = [
-            'name' =>  $this->input->post('fullname'),
+            'name' =>  $this->input->post('name'),
             'username' =>  $this->input->post('username'),
+            'nik' =>  $this->input->post('nik'),
+            'whatsapp' =>  $this->input->post('whatsapp'),
+            'email' =>  $this->input->post('email'),
             'password' =>  password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'profile_picture' =>  'default.png',
             'status' =>  '0'
         ];
         $insert = $this->M_Users->insert($data);
         if ($insert){
-            $this->session->set_flashdata([
-                'msg' => 'Berhasil Mendaftar, akun anda sedang di verifikasi admin',
-                'type' => 'success'
-            ]);
-            redirect('auth');
+            if ($this->input->is_ajax_request()) {
+                echo json_encode(array("status" => true));
+            } else {
+                $this->session->set_flashdata([
+                    'msg' => 'Berhasil Mendaftar, akun anda sedang di verifikasi admin',
+                    'type' => 'success'
+                ]);
+                redirect('auth');
+            }
         } else {
-            $this->session->set_flashdata([
-                'msg' => 'Maaf Anda Gagal Melakukan Pendaftaran',
-                'type' => 'error'
-            ]);
+            if ($this->input->is_ajax_request()) {
+                echo json_encode(array("status" => false));
+            } else {
+                $this->session->set_flashdata([
+                    'msg' => 'Maaf Anda Gagal Melakukan Pendaftaran',
+                    'type' => 'error'
+                ]);
+            }
             redirect('auth');
         }
     }

@@ -56,23 +56,25 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control" id="nama" name="nama" reqiured>
+                                    <input type="text" class="form-control" id="name" name="name" reqiured>
                                 </div>
                                 <div class="form-group">
                                     <label for="whatsapp">No Telepon</label>
                                     <input type="number" class="form-control" id="whatsapp" name="whatsapp" placeholder="08.." reqiured>
                                 </div>
                             </div>
+                            
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="role">Jabatan</label>
                                     <select class="form-control" id="role_id" name="role_id">
                                         <option value="">--Pilih Role--</option>
                                         <?php foreach ($role as $key): ?>
-                                        <option value="<?=$key['id'];?>"><?=$key['role_name'];?></option>
+                                        <option value="<?= $key['id'];?>"><?= $key['role_name'];?></option>
                                         <?php endforeach;?>
                                     </select>
                                 </div>
+                                <?php var_dump($role); ?>
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select class="form-control" id="status" name="status">

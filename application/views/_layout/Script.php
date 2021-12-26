@@ -30,6 +30,7 @@
 
 <!-- default Siakad -->
 <script src="<?=base_url('assets/');?>js/default-siakad.js"></script>
+<script src="<?=base_url('assets/');?>js/default-notif.js"></script>
 
 <!-- <script>
   $(document).ready(function() {

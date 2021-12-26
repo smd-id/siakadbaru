@@ -15,19 +15,85 @@
   <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
+<style>
+    .bg-siakad{
+        background-image: url("https://ruhulislam.com/wp-content/uploads/2020/10/2018-12-07-1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h1.page-header-title{
+        color: white;
+        font-weight: bold;
+        text-shadow: 0 0 3px #000000, 0 0 5px #0000FF;
+    }
+    .page-header-subtitle{
+        color: white;
+        text-shadow: 0 0 3px #000000, 0 0 5px #0000FF;
+        font-size: 14pt;
+    }
+</style>
 <body class="nav-fixed">
-<nav class="topnav navbar navbar-expand shadow navbar-light bg-white">
+<nav class="topnav navbar navbar-expand shadow navbar-light">
     <a class="navbar-brand" href="<?= base_url(); ?>">
     <img src="<?= base_url('assets/img/logo/logo.png'); ?>" style="height:2.2rem!important;margin:-5px 0px 0px 0px;">
     </a>
 </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="myModalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Daftar Akun</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" class="form-vertical" id="form-regitser">
+                        <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>NO WA</label>
+                        <input type="number" name="whatsapp" id="whatsapp" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>NIK</label>
+                        <input type="number" name="nik" id="nik" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+                        <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+                        
+                        <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+
+                        <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm btnSave" onClick="submitRegister()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <main>
-        <header class="page-header page-header-dark bg-navy pb-5">
+        <header class="page-header bg-siakad pb-5">
             <div class="container">
-                <div class="page-header-content pt-3">
+                <div class="page-header-content">
                     <div class="row align-items-center justify-content-between">
-                        <div class="col-md-12 mt-4">
+                        <div class="col-md-12 mt-5 mb-5">
                             <h1 class="page-header-title">
                                 Sistem Informasi Akademik
                             </h1>
@@ -51,17 +117,19 @@
                                     <form action="<?= base_url('auth/dologin'); ?>" method="POST">
                                         <div class="form-group">
                                             <label class="small mb-1" for="username">Username</label>
-                                            <input class="form-control py-4" id="username" name="username" type="text" placeholder="Enter Username" autocomplate="off">
+                                            <input class="form-control py-4" id="usernames" name="username" type="text" placeholder="Enter Username" autocomplate="off">
                                         </div>
                                         <div class="form-group">
                                             <label class="small mb-1" for="password">Password</label>
-                                            <input class="form-control py-4" id="password" name="password" type="password" placeholder="Enter password" autocomplate="off">
+                                            <input class="form-control py-4" id="passwords" name="password" type="password" placeholder="Enter password" autocomplate="off">
                                         </div>
                                         <div class="form-group">
-                                                <input type="checkbox" onclick="myFunction()"> Show Password
+                                                <input type="checkbox" onclick="showPassword()"> Show Password
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <button type="submit" name="submit" class="btn btn-primary">Login</button> <a href="https://wa.me/6281263280610" target="_blank"> Lupa Password?</a>
+                                            <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                                            <a href="#" onCLick="window.open('https://wa.me/6281263280610')"> Lupa Password?</a>
+                                            <a href="#" onCLick="registermodal()"> Daftar Akun</a>
                                         </div>
                                     </form>
                                 </div>
@@ -159,7 +227,7 @@
 <script src="<?= base_url('assets/'); ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- sweetalert2 -->
 <script src="<?= base_url('assets/'); ?>plugins/sweetalert2/sweetalert2.all.min.js"></script>
-<script src="<?= base_url('assets/'); ?>js/default-siakad.js"></script>
+<script src="<?= base_url('assets/'); ?>js/default-notif.js"></script>
 
 <?php
   if ($this->session->flashdata('msg') !== NULL){
@@ -168,14 +236,53 @@
 ?>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
+
+function showPassword()
+{
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+}
+
+function registermodal()
+{
+    $('#myModalRegister').modal('show')
+}
+
+function submitRegister()
+{
+    $('#btnSave').text('Saving...'); //change button text
+    $('#btnSave').attr('disabled',true); //set button disable
+
+    // ajax adding data to database
+    $.ajax({
+        url : "<?= base_url('auth/doregister'); ?>",
+        type: "POST",
+        data: $('#form-regitser').serialize(),
+        dataType: "JSON",
+        success: function(data)
+        {
+            if(data.status == true)
+            {
+                $('#myModalRegister').modal('hide');
+                mySwalalert('Berhasil Menyimpan Data, Silahkan Login', 'success');
+            }
+            $('#btnSave').text('Save');
+            $('#btnSave').attr('disabled',false);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            mySwalalert('Gagal Menyimpan Data', 'error');
+            $('#btnSave').text('Save');
+            $('#btnSave').attr('disabled',false);
+        }
+    });
 }
 </script>
+
 </body>
 </html>
