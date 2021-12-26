@@ -74,7 +74,6 @@
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                                <?php var_dump($role); ?>
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select class="form-control" id="status" name="status">

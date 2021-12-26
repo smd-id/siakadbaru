@@ -15,7 +15,6 @@ class Auth extends CI_Controller
         if (!$this->session->has_userdata('id')){
             $data = [
                 'title' => "Login",
-                'content' => "Auth/login"
             ];
     
             echo $this->template->auth($data);
@@ -73,7 +72,7 @@ class Auth extends CI_Controller
     {
         $data = [
             'title' => "Register",
-            'content' => "Auth/register"
+            'content' => "Auth/register",
         ];
         echo $this->template->auth($data);
     }
@@ -85,6 +84,7 @@ class Auth extends CI_Controller
             'username' =>  $this->input->post('username'),
             'nik' =>  $this->input->post('nik'),
             'whatsapp' =>  $this->input->post('whatsapp'),
+            'role_id' =>  $this->input->post('role_id'),
             'email' =>  $this->input->post('email'),
             'password' =>  password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'profile_picture' =>  'default.png',

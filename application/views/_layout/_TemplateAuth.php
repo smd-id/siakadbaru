@@ -80,6 +80,16 @@
                         <label>Password</label>
                         <input type="text" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
                         </div>
+
+                        <div class="form-group">
+                            <label for="role">Jabatan</label>
+                            <select class="form-control" id="role_id" name="role_id">
+                                <option value="">--Pilih Role--</option>
+                                <?php foreach ($roles as $key): ?>
+                                <option value="<?= $key->id;?>"><?= $key->role_name;?></option>
+                                <?php endforeach;?>
+                            </select>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">

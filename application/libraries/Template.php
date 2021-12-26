@@ -3,14 +3,15 @@
 		protected $_ci;
 
 		function __construct() {
-			$this->_ci = &get_instance(); //Untuk Memanggil function load, dll dari CI. ex: $this->load, $this->model, dll
+			$this->_ci = &get_instance();
+
+			$this->_ci->load->model('M_Schooldetail');
+			$this->_ci->load->model('M_Users');
+			$this->_ci->load->model('M_Role');
 		}
 
 		function views($data) {
 			
-			$this->_ci->load->model('M_Schooldetail');
-			$this->_ci->load->model('M_Users');
-			$this->_ci->load->model('M_Role');
 			
 			$data['detail'] = $this->_ci->M_Schooldetail->get();
 			$data['userdata'] = $this->_ci->M_Users->get_by_id($this->_ci->session->userdata['id']);
@@ -25,6 +26,7 @@
 			// Company Detail
 			$this->_ci->load->model('M_Schooldetail');
 			$data['detail'] = $this->_ci->M_Schooldetail->get();
+			$data['roles'] = $this->_ci->M_Role->getall();
 
 
 			if ($data != NULL) {
