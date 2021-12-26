@@ -83,7 +83,7 @@
 
                         <div class="form-group">
                             <label for="role">Jabatan</label>
-                            <select class="form-control" id="role_id" name="role_id">
+                            <select class="form-control" id="role_id" name="role_id" required>
                                 <option value="">--Pilih Role--</option>
                                 <?php foreach ($roles as $key): ?>
                                 <option value="<?= $key->id;?>"><?= $key->role_name;?></option>
