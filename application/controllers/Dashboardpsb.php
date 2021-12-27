@@ -35,7 +35,7 @@ class Dashboardpsb extends CI_Controller
 
             $chart_undangan = $this->M_Peserta->count_all_kab('undangan');
             $chart_reguler = $this->M_Peserta->count_all_kab('reguler');
-
+            $undangan = [];
             foreach ($chart_undangan as $key) {
                
                 $undangan []= [
@@ -45,7 +45,7 @@ class Dashboardpsb extends CI_Controller
                     'rgb'   => bm_random_rgb()
                 ];
             }
-
+            $reguler = [];
             foreach ($chart_reguler as $key) {
                 
                 $reguler []= [
