@@ -17,5 +17,12 @@ function psb_detail($name)
     return $payload->$name;
 }
 
+function bm_random_rgb()
+{
+    
+     return 'rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')';
+    
+}
+
 
 ?>

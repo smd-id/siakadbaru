@@ -31,6 +31,9 @@
 <!-- script nestable -->
 <script src="<?=base_url('vendor/nestable/jquery.nestable.js')?>"></script>
 
+<!-- Spotlight -->
+<script src="<?=base_url('assets/js/spotlight.bundle.js')?>"></script>
+
 <!-- default Siakad -->
 <script src="<?=base_url('assets/');?>js/default-siakad.js"></script>
 <script src="<?=base_url('assets/');?>js/default-notif.js"></script>

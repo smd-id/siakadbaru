@@ -4,6 +4,7 @@ var table;
 
 $(document).ready(function() {
 
+    var id_kab = $('#id_kab').val();
     //datatables
     table = $('#table').DataTable({
         
@@ -14,7 +15,7 @@ $(document).ready(function() {
 
         // Load data for the table's content from an Ajax source
         "ajax": {
-            "url": "<?=base_url('konfirmasipsb/data/');?>",
+            "url": "<?=base_url('seleksiberkas/data/');?>"+id_kab,
             "type": "POST"
         },
 
@@ -64,6 +65,12 @@ function update_data(id)
 function reload_table()
 {
     table.ajax.reload(null,false); //reload datatable ajax
+}
+
+function show_file(nik)
+{
+    $('#nik').val(nik);
+    $('#modal_file').modal('show');
 }
 </script>
 

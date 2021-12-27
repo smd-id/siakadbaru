@@ -1,17 +1,8 @@
 
-<script src="<?= base_url('assets/js/');?>jquery.magnify.js"></script>
 <script type="text/javascript">
 var table;
 
 $(document).ready(function() {
-    
-    $("[data-magnify=struk]").magnify({
-        draggable: false,
-        resizable: false,
-        movable: false,
-        modalWidth: 500,
-        modalHeight: 500,
-    });
 
     //datatables
     table = $('#table').DataTable({
@@ -105,6 +96,16 @@ function reject(id)
 function reload_table()
 {
     table.ajax.reload(null,false); //reload datatable ajax
+}
+
+function viewFile(file)
+{
+    var url = "<?= psb_url('uploads/struk/'); ?>"+file;
+    Spotlight.show([{
+        src: url,
+        theme: "black"
+    }]);
+
 }
 </script>
 

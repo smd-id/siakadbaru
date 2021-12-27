@@ -46,9 +46,6 @@
     
     <!-- Costum CSS Location -->
     
-    <!-- Magnify -->
-    <link href="<?=base_url('assets/css/');?>jquery.magnify.css" rel="stylesheet">
-    
     <?php
         if (!empty($costum_css)) {
             $this->view($costum_css);
