@@ -15,6 +15,8 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Username</th>
                             <th scope="col">No WA</th>
+                            <th scope="col">No NIK</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Jabatan</th>
                             <th scope="col">Status</th>
                             <th>#</th>
@@ -66,11 +68,20 @@
                             
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="nama">NIK</label>
+                                    <input type="number" class="form-control" id="nik" name="nik" reqiured>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nama">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email" reqiured>
+                                </div>
+                                
+                                <div class="form-group">
                                     <label for="role">Jabatan</label>
-                                    <select class="form-control" id="role_id" name="role_id">
+                                    <select class="form-control" id="role_id" name="role_id" required>
                                         <option value="">--Pilih Role--</option>
-                                        <?php foreach ($role as $key): ?>
-                                        <option value="<?= $key['id'];?>"><?= $key['role_name'];?></option>
+                                        <?php foreach ($roles as $key): ?>
+                                        <option value="<?= $key->id;?>"><?= $key->role_name;?></option>
                                         <?php endforeach;?>
                                     </select>
                                 </div>

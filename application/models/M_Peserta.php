@@ -96,5 +96,13 @@ class M_Peserta extends CI_Model
         ->get();
         return $query;
     }
+
+    public function count_by_jalur($where)
+    {
+        $this->db->where('jalur', $where);
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
     
 }

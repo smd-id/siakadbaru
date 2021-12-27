@@ -87,6 +87,14 @@ class M_Konfirmasi extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function count_limited()
+    {
+        $this->db->where('s_payment', '3');
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
     public function get_file($nik)
     {
         $query = $this->db

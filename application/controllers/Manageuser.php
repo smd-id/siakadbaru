@@ -53,9 +53,11 @@ class Manageuser extends CI_Controller
                 $row[] = $key->name;
                 $row[] = $key->username;
                 $row[] = $key->whatsapp;
+                $row[] = $key->nik;
+                $row[] = $key->email;
                 $row[] = '<span class="badge bg-' . $role['role_color'] . '">' . $role['role_name'] . '</span>';
                 $row[] = $status;
-                $row[] = '<a class="btn btn-xs btn-primary" href="javascript:void(0)" title="Edit" onclick="edit_data(' . "'" . $key->id . "'" . ')"><i class="fas fa-pen"></i></a>
+                $row[] = '<a class="btn btn-xs btn-primary '.$show_btn.'" href="javascript:void(0)" title="Edit" onclick="edit_data(' . "'" . $key->id . "'" . ')"><i class="fas fa-pen"></i></a>
                   <a class="btn btn-xs btn-danger '.$show_btn.'" href="javascript:void(0)" title="Hapus" onclick="delete_data(' . "'" . $key->id . "'" . ')"><i class="fas fa-trash"></i></a>';
 
                 $data[] = $row;
@@ -85,8 +87,10 @@ class Manageuser extends CI_Controller
         $data = [
             'username'  => $this->input->post('username'),
             'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-            'name'      => $this->input->post('nama'),
+            'name'      => $this->input->post('name'),
             'role_id'   => $this->input->post('role_id'),
+            'nik'   => $this->input->post('nik'),
+            'email'   => $this->input->post('email'),
             'whatsapp'  => $this->input->post('whatsapp'),
             'status'    => $this->input->post('status'),
             'profile_picture' => 'default.png',
@@ -99,8 +103,10 @@ class Manageuser extends CI_Controller
     {
         $data = [
             'username'  => $this->input->post('username'),
-            'name'      => $this->input->post('nama'),
+            'name'      => $this->input->post('name'),
             'role_id'   => $this->input->post('role_id'),
+            'nik'   => $this->input->post('nik'),
+            'email'   => $this->input->post('email'),
             'whatsapp'  => $this->input->post('whatsapp'),
             'status'    => $this->input->post('status'),
             'profile_picture' => 'default.png',

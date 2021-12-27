@@ -14,7 +14,7 @@ class Manageinfo extends CI_Controller
     {
         check_akses();
         $data = [
-            'title' => 'Informasi Dealer',
+            'title' => 'Informasi SIAKAD',
             'content' => 'Administrator/manageinfo/index',
             'costum_js' => 'Administrator/manageinfo/js-info',
         ];
@@ -55,12 +55,7 @@ class Manageinfo extends CI_Controller
         }
     }
 
-    public function ajax_edit($id)
-    {
-        $data = $this->M_Info->get_by_id($id);
-        echo json_encode($data);
-    }
-
+    
     public function ajax_add()
     {
         $insert = $this->M_Info->insert($this->input->post());

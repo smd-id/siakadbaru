@@ -9,5 +9,13 @@ function psb_url($path = NULL)
     }
 }
 
+function psb_detail($name)
+{
+    $ci = &get_instance();
+    $ci->load->model('M_Psbdetail');
+	$payload = $ci->M_Psbdetail->get_detail();
+    return $payload->$name;
+}
+
 
 ?>

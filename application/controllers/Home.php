@@ -8,7 +8,6 @@ class Home extends CI_Controller {
 		parent::__construct();
 		check_login();
 		$this->load->model('M_Info');
-		
 		$this->load->model('M_Users');
     }
 

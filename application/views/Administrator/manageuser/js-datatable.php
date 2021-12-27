@@ -72,9 +72,11 @@ function edit_data(id)
 
             $('[name="id"]').val(data.id);
             $('[name="username"]').val(data.username);
-            $('[name="nama"]').val(data.name);
+            $('[name="name"]').val(data.name);
             $('[name="whatsapp"]').val(data.whatsapp);
             $('[name="role_id"]').val(data.role_id);
+            $('[name="nik"]').val(data.nik);
+            $('[name="email"]').val(data.email);
             $('[name="status"]').val(data.status);
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
             $('.modal-title').text('Edit User'); // Set title to Bootstrap modal title
