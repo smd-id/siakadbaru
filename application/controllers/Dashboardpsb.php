@@ -59,7 +59,7 @@ class Dashboardpsb extends CI_Controller
             echo json_encode(array("status" => true, 
                                     "result" => $data, 
                                     "chart_undangan" => $undangan, 
-                                    "chart_reguler" => $reguler
+                                    "chart_reguler" => $reguler,
                                 ));
         } else {
             exit('Maaf data tidak bisa di tampilkan');
