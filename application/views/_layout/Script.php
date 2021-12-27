@@ -25,6 +25,9 @@
 <!-- Swal -->
 <script src="<?=base_url('assets/');?>plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
+<!-- Chart.jS -->
+<script src="<?=base_url('assets/');?>plugins/chart.js/Chart.min.js"></script>
+
 <!-- script nestable -->
 <script src="<?=base_url('vendor/nestable/jquery.nestable.js')?>"></script>
 

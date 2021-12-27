@@ -16,8 +16,8 @@ class Dashboardpsb extends CI_Controller
         check_akses();
         $data = [
             'title' => 'Dashboard PSB',
-            'content' => 'Psb/dashboard/index',
-            'costum_js' => 'Psb/dashboard/js',
+            'content' => 'Psb/Dashboard/index',
+            'costum_js' => 'Psb/Dashboard/js',
         ];
         echo $this->template->views($data);
     }

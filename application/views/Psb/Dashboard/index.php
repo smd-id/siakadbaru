@@ -87,7 +87,15 @@
                     <div class="tab-content p-0">
                         <!-- Morris chart - Sales -->
                         <div class="chart tab-pane active" id="UndanganMap" style="position: relative; height: 300px;">
-                            <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                            <div class="chartjs-size-monitor">
+                                <div class="chartjs-size-monitor-expand">
+                                    <div class=""></div>
+                                </div>
+                                <div class="chartjs-size-monitor-shrink">
+                                    <div class=""></div>
+                                </div>
+                            </div>
+                            <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 355px;" width="355" height="250" class="chartjs-render-monitor"></canvas>
                         </div>
                         <div class="chart tab-pane" id="RegulerMap" style="position: relative; height: 300px;">
                             <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>

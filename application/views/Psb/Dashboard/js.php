@@ -4,7 +4,7 @@
 
         $(document).ready(function(){
             doAjax();
-            setInterval(doAjax, 15000);
+            setInterval(doAjax, 10000);
         });
         
         function doAjax()
@@ -38,5 +38,34 @@
                 }
             });
         }
+
+
+        $(function () {
+            //---------------------
+            //- STACKED BAR CHART -
+            //---------------------
+            var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+            var stackedBarChartData = $.extend(true, {}, barChartData)
+
+            var stackedBarChartOptions = {
+            responsive              : true,
+            maintainAspectRatio     : false,
+            scales: {
+                xAxes: [{
+                stacked: true,
+                }],
+                yAxes: [{
+                stacked: true
+                }]
+            }
+            }
+
+            new Chart(stackedBarChartCanvas, {
+            type: 'bar',
+            data: stackedBarChartData,
+            options: stackedBarChartOptions
+            })
+        })
+
     });
 </script>
