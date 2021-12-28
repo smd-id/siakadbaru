@@ -125,5 +125,16 @@ class Seleksiberkas extends CI_Controller {
             exit('Maaf data tidak bisa ditampilkan');
         }
     }
+    
+    public function ajax_get($nik)
+    {
+        if ($this->input->is_ajax_request()) {
+            $get = $this->M_Berkas->get_file($nik)->row();
+            
+            echo json_encode(array("status" => false, 'result' => $get));
+        } else {
+            exit('Maaf data tidak bisa ditampilkan');
+        }
+    }
 
 }

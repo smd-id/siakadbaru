@@ -115,5 +115,16 @@ class M_Berkas extends CI_Model
         $this->db->update($this->table, $data);
         return $this->db->affected_rows();
     }
+
+    public function get_file($nik)
+    {
+        $query = $this->db
+        ->select('*')
+        ->from ('peserta_psb')
+        ->join ('file_psb', 'file_psb.nik = peserta_psb.nik')
+        ->where("peserta_psb.nik",$nik)
+        ->get();
+        return $query;
+    }
     
 }

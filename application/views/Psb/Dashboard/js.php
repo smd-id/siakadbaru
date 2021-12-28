@@ -52,7 +52,17 @@
                                         beginAtZero: true,
                                         precision:0
                                     }
+                                }],
+                                xAxes: [{
+                                    ticks: {
+                                        autoSkip: false,
+                                        maxRotation: 90,
+                                        minRotation: 90
+                                    }
                                 }]
+                            },
+                            legend: {
+                                display: false,
                             }
                         }
                     });
@@ -86,7 +96,17 @@
                                         beginAtZero: true,
                                         precision:0
                                     }
+                                }],
+                                xAxes: [{
+                                    ticks: {
+                                        autoSkip: false,
+                                        maxRotation: 90,
+                                        minRotation: 90
+                                    }
                                 }]
+                            },
+                            legend: {
+                                display: false,
                             }
                         }
                     });

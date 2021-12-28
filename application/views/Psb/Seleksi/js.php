@@ -69,8 +69,45 @@ function reload_table()
 
 function show_file(nik)
 {
-    $('#nik').val(nik);
-    $('#modal_file').modal('show');
+    $.ajax({
+        url : "<?php echo site_url('seleksiberkas/ajax_get') ?>/"+nik,
+        type: "POST",
+        dataType: "JSON",
+        success: function(data)
+        {
+            $('#nik').val(nik);
+            $('#modal_file').modal('show');
+            
+            $('#name').html(data.result.nama+" - "+nik);
+            var html = "";
+            $.each(data.result,function(key,value){
+                var keys_id = "#file_"+key;
+
+                var path = key+"/"+value;
+                
+                html = "<a href='#' data-id='"+path+"' class='btn btn-sm btn-success' onclick='viewFile(this)'> Preview</a>";
+                $(keys_id).html(html);
+            });
+
+            
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            mySwalalert('Gagal Mendapatkan Data', 'error');
+        }
+    });
+    
+}
+
+function viewFile(d)
+{
+    var path = d.getAttribute("data-id");
+    var url = "https://psb.ruhulislam.com/uploads/"+path;
+    Spotlight.show([{
+        src: url,
+        theme: "black"
+    }]);
+
 }
 </script>
 

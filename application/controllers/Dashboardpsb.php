@@ -37,20 +37,20 @@ class Dashboardpsb extends CI_Controller
             $chart_reguler = $this->M_Peserta->count_all_kab('reguler');
             $undangan = [];
             foreach ($chart_undangan as $key) {
-               
+                $prov = substr($key->kabupaten, 0,2);
                 $undangan []= [
                     'kode'  => $key->kabupaten,
-                    'nama'  => what_kabupaten($key->kabupaten),
+                    'nama'  => what_kabupaten($key->kabupaten)." - ".what_provinsi($prov),
                     'total'  => $key->total,
                     'rgb'   => bm_random_rgb()
                 ];
             }
             $reguler = [];
             foreach ($chart_reguler as $key) {
-                
+                $prov = substr($key->kabupaten, 0,2);
                 $reguler []= [
                     'kode'  => $key->kabupaten,
-                    'nama'  => what_kabupaten($key->kabupaten),
+                    'nama'  => what_kabupaten($key->kabupaten)." - ".what_provinsi($prov),
                     'total'  => $key->total,
                     'rgb'   => bm_random_rgb()
                 ];

@@ -52,8 +52,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
-                        Regional Map
+                        <i class="fas fa-chart-bar mr-1"></i>
+                        Chart By Regional
                         </h3>
                         <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
@@ -69,19 +69,21 @@
                     <div class="card-body">
                         <div class="tab-content p-0">
                             <div class="chart tab-pane active" id="chartundangan">
-                                <canvas id="chart_undangan" width="400" height="100" class="chartjs-render-monitor"></canvas>
+                                <p class="lead">Jalur Undangan</p>
+                                <canvas id="chart_undangan" width="400" height="200" class="chartjs-render-monitor"></canvas>
                             </div>
                             <div class="chart tab-pane" id="chartreguler">
-                                <canvas id="chart_reguler" width="400" height="100" class="chartjs-render-monitor"></canvas>
+                                <p class="lead">Jalur Reguler</p>
+                                <canvas id="chart_reguler" width="400" height="200" class="chartjs-render-monitor"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <p>Data Berdasarkan
+                        <p>Data Dihimpun Berdasarkan :
                             <ul>
-                                <li>Sudah Melakukan Pembayaran</li>
-                                <li>Sudah Mengisi Biodata</li>
-                                <li>Sudah Upload File</li>
+                                <li>Peserta Sudah Melakukan Pembayaran</li>
+                                <li>Peserta Sudah Mengisi Biodata</li>
+                                <li>Peserta Sudah Upload File</li>
                             </ul>
                         </p>
                     </div>
