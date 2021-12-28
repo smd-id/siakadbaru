@@ -75,20 +75,13 @@ class Seleksiberkas extends CI_Controller {
         if ($this->input->is_ajax_request()) {
 
             $get = $this->M_Berkas->get($nik);
-            $pesan = "Alhamdulillah, Anda di";
             $data = [
                 's_lulus_adm' => '1',
             ];
-            $chat = [
-                'no_telepon'        => $get->no_telepon,
-                'pesan'             => $pesan,
-                'type'              => 'Text',
-                'status_proses'     => 'pending',
-            ];
+            
             $update = $this->M_Berkas->update($nik, $data);
-            $send = $this->M_Chat->insert($chat);
 
-            if ($update && $send){
+            if ($update){
                 echo json_encode(array("status" => true));
             } else {
                 echo json_encode(array("status" => false));
@@ -97,33 +90,6 @@ class Seleksiberkas extends CI_Controller {
             exit('Maaf data tidak bisa ditampilkan');
         }
 
-    }
-
-    public function ajax_reject($nik)
-    {
-        if ($this->input->is_ajax_request()) {
-            $get = $this->M_Berkas->get($nik);
-            $pesan = "Mohon Maaf.. Pembayaran anda gagal kami konfirmasi. mohon hubungi kami untuk info lebih lanjut";
-            $data = [
-                's_payment' => '2',
-            ];
-            $chat = [
-                'no_telepon'        => $get->no_telepon,
-                'pesan'             => $pesan,
-                'type'              => 'Text',
-                'status_proses'     => 'pending',
-            ];
-            $update = $this->M_Berkas->update($nik, $data);
-            $send = $this->M_Chat->insert($chat);
-
-            if ($update && $send){
-                echo json_encode(array("status" => true));
-            } else {
-                echo json_encode(array("status" => false));
-            }
-        } else {
-            exit('Maaf data tidak bisa ditampilkan');
-        }
     }
     
     public function ajax_get($nik)

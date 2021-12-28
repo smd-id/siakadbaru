@@ -31,26 +31,28 @@ $(document).ready(function() {
 });
 
 
-function update_data(id)
+function luluskan()
 {
+    var nik = $('#nik_form').val();
     Swal.fire({
             title: 'Anda Yakin ?',
-            html: "Mengkonfirmasi Pembayaran ini",
+            html: "Mengkonfirmasi Kelulusan ini",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, confirm it!'
+            confirmButtonText: 'Yes, Luluskan!'
     }).then((result) => {
         if (result.value) {
             // ajax delete data to database
             $.ajax({
-                url : "<?php echo site_url('konfirmasipsb/ajax_delete') ?>/"+id,
+                url : "<?php echo site_url('seleksiberkas/ajax_confirm') ?>/"+nik,
                 type: "POST",
                 dataType: "JSON",
-                success: function(data)
+                success: function(data, status)
                 {
                     reload_table();
+                    $('#modal_file').modal('hide');
                     mySwalalert('Berhasil Konfirmasi Data', 'success');
                 },
                 error: function (jqXHR, textStatus, errorThrown)
@@ -75,7 +77,7 @@ function show_file(nik)
         dataType: "JSON",
         success: function(data)
         {
-            $('#nik').val(nik);
+            $('#nik_form').val(nik);
             $('#modal_file').modal('show');
             
             $('#name').html(data.result.nama+" - "+nik);
@@ -88,8 +90,6 @@ function show_file(nik)
                 html = "<a href='#' data-id='"+path+"' class='btn btn-sm btn-success' onclick='viewFile(this)'> Preview</a>";
                 $(keys_id).html(html);
             });
-
-            
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
@@ -103,10 +103,10 @@ function viewFile(d)
 {
     var path = d.getAttribute("data-id");
     var url = "https://psb.ruhulislam.com/uploads/"+path;
-    Spotlight.show([{
-        src: url,
-        theme: "black"
-    }]);
+
+    newwindow=window.open(url,'View File','height=300,width=650,screenX=400,screenY=350');
+        if (window.focus) {newwindow.focus()}
+    return false;
 
 }
 </script>

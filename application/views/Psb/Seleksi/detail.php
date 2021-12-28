@@ -34,7 +34,6 @@
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <input type="hidden" id="nik" value="">
                 <p class="lead" id="name"></p>
                 <table class="table table-striped" id="file_table">
                     <thead>
@@ -84,7 +83,10 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i> Luluskan</button>
+                <form action="POST" id="aksi_luluskan">
+                    <input type="hidden" id="nik_form" value="" required>
+                    <button type="button" class="btn btn-sm btn-success" id="btnLuluskan" onclick="luluskan()"><i class="fas fa-check"></i> Luluskan</button>
+                </form>
                 <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Abaikan</button>
             </div>
         </div>

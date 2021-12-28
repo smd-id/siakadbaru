@@ -74,7 +74,6 @@ $(function() {
             url: "<?= base_url('managemenu/updatesequenceAjaxmenu/'); ?>",
             data:{data:subIndicTreeObj},
             success:function(data){
-                console.log(data.success)
                 if(data.success === true){
                     btnSave.attr('disabled', false);
                     btnSave.html('<i class="fa fa-save"></i> Save');
