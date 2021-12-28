@@ -17,7 +17,6 @@ class M_Berkas extends CI_Model
         $this->db->where('jalur', 'undangan');
         $this->db->where('s_payment', '1');
         $this->db->where('s_biodata', '1');
-        $this->db->where('s_file', '0');
         $this->db->where('s_cetak', '0');
         $this->db->where('s_lulus_adm', '0');
         $this->db->where('s_lulus', '0');
