@@ -1,7 +1,10 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
-            <button onclick="history.back()" class="btn btn-md btn-danger mb-2"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="button-group mb-2">
+                <button onclick="history.back()" class="btn btn-md btn-danger"><i class="fas fa-arrow-left"></i> Back</button>
+                <button onclick="reload_table()" class="btn btn-md btn-info"><i class="fas fa-sync"></i> Reload</button>
+            </div>
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
