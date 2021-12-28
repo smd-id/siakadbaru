@@ -30,7 +30,11 @@ class Dashboardpsb extends CI_Controller
                 'total_undangan'            => $this->M_Peserta->count_by_jalur('undangan')." Orang",
                 'total_reguler'             => $this->M_Peserta->count_by_jalur('reguler')." Orang",
                 'total_mohon_konfirmasi'    => $this->M_Konfirmasi->count_mohon_konfirmasi()." Orang",
-                'total_dana_terkumpul'      => rupiah(psb_detail('biaya_psb') * $this->M_Peserta->count_by_jalur('reguler'))
+                'total_dana_terkumpul'      => rupiah(psb_detail('biaya_psb') * $this->M_Peserta->count_by_jalur('reguler')),
+                'total_lulus_adm'           => $this->M_Peserta->count_lulus_adm()." Orang",
+                'total_lulus_undangan'      => $this->M_Peserta->count_lulus_undangan()." Orang",
+                'total_lulus_reguler'       => $this->M_Peserta->count_lulus_reguler()." Orang",
+                'pendaftar_sia_sia'         => $this->M_Peserta->count_sia_sia()." Orang",
             ];
 
             $chart_undangan = $this->M_Peserta->count_all_kab('undangan');

@@ -48,6 +48,52 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                    <div class="inner">
+                        <h4 id="total_lulus_adm">0</h4>
+                        <p>Lulus Seleksi ADM</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                    <div class="inner">
+                        <h4 id="total_lulus_undangan">0</h4>
+                        <p>Lulus Jalur Undangan</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                    <div class="inner">
+                        <h4 id="total_lulus_reguler">0</h4>
+                        <p>Lulus Jalur Reguler</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="small-box bg-secondary">
+                    <div class="inner">
+                        <h4 id="pendaftar_sia_sia">0</h4>
+                        <p>Tidak Melengkapi Apapun</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-sad-tear"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <section class="col-lg-12 connectedSortable">
                 <div class="card">
                     <div class="card-header">

@@ -105,6 +105,52 @@ class M_Peserta extends CI_Model
         return $query->num_rows();
     }
 
+    public function count_lulus_adm()
+    {
+        $this->db->where('s_payment', '1');
+        $this->db->where('s_biodata', '1');
+        $this->db->where('s_file', '1');
+        $this->db->where('s_lulus_adm', '1');
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_lulus_undangan()
+    {
+        $this->db->where('jalur', 'undangan');
+        $this->db->where('s_payment', '1');
+        $this->db->where('s_biodata', '1');
+        $this->db->where('s_file', '1');
+        $this->db->where('s_lulus_adm', '1');
+        $this->db->where('s_lulus', '1');
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_lulus_reguler()
+    {
+        $this->db->where('jalur', 'reguler');
+        $this->db->where('s_payment', '1');
+        $this->db->where('s_biodata', '1');
+        $this->db->where('s_file', '1');
+        $this->db->where('s_lulus_adm', '1');
+        $this->db->where('s_lulus', '1');
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_sia_sia()
+    {
+        $this->db->where('s_biodata', '0');
+        $this->db->where('s_file', '0');
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
     public function count_all_kab($jalur)
     {
 
