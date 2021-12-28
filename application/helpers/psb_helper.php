@@ -36,10 +36,42 @@ function what_akademik($kode)
         }
 }
 
-function what_jurusan($kode)
+function what_status_ortu($kode)
 {
     switch ($kode)
         {
+        case "masih":
+        return "Masih Hidup";
+        break;
+        case "meninggal":
+        return "Almarhum";
+        break;
+        }
+}
+
+function jurusan($jurusan)
+{
+    switch ($jurusan)
+    {
+        case "A":
+        return "Ilmu Pengatahuan Alam (IPA)";
+        break;
+        case "G":
+        return "Ilmu Keagamaan (MAK)";
+        break;
+        case "A-UDG":
+        return "Ilmu Pengatahuan Alam (IPA)";
+        break;
+        case "G-UDG":
+        return "Ilmu Keagamaan (MAK)";
+        break;
+    }
+}
+
+function jurusan_singkat($jurusan)
+{
+    switch ($jurusan)
+    {
         case "A":
         return "IPA";
         break;
@@ -52,7 +84,20 @@ function what_jurusan($kode)
         case "G-UDG":
         return "MAK";
         break;
-        }
+    }
+}
+
+function jenis_kelamin($jk)
+{
+    switch ($jk)
+    {
+        case "L":
+        return "Laki - Laki";
+        break;
+        case "P":
+        return "Perempuan";
+        break;
+    }
 }
 
 

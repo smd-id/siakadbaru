@@ -88,6 +88,7 @@ class Auth extends CI_Controller
             'email' =>  $this->input->post('email'),
             'password' =>  password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'profile_picture' =>  'default.png',
+            'izin_psb' =>  'viewer',
             'status' =>  '0'
         ];
         $insert = $this->M_Users->insert($data);
