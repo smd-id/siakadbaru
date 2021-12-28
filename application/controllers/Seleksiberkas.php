@@ -47,12 +47,15 @@ class Seleksiberkas extends CI_Controller {
 
                 $no++;
                 
+                
                 $row = array();
                 $row[] = $no;
                 $row[] = $key->nik;
                 $row[] = $key->nama;
+                $row[] = what_jurusan($key->minat);
                 $row[] = $key->no_telepon;
                 $row[] = $key->asal_sekolah;
+                $row[] = what_akademik($key->s_akademik);
                 $row[] = '<a class="btn btn-xs btn-primary" href="javascript:void(0)" title="Lihat File" onclick="show_file(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> Lihat File</a>';
                 $data[] = $row;
             }

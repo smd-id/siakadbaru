@@ -53,7 +53,7 @@ class Auth extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata([
-                    'msg' => 'Akun anda di blokir admin',
+                    'msg' => 'Akun anda belum di aktifasi admin / di blokir admin',
                     'type' => 'warning'
                 ]);
                 redirect('auth');

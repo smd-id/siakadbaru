@@ -105,7 +105,7 @@ function viewFile(d)
     var path = d.getAttribute("data-id");
     var url = "https://psb.ruhulislam.com/uploads/"+path;
 
-    newwindow=window.open(url,'View File','height=300,width=650,screenX=400,screenY=350');
+    newwindow=window.open(url,'View File','height=720,width=1280,screenX=400,screenY=350');
         if (window.focus) {newwindow.focus()}
     return false;
 

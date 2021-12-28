@@ -100,6 +100,7 @@ class M_Peserta extends CI_Model
     public function count_by_jalur($where)
     {
         $this->db->where('jalur', $where);
+        $this->db->where('s_payment', '1');
         $this->db->from($this->table);
         $query = $this->db->get();
         return $query->num_rows();

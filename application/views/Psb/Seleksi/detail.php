@@ -19,8 +19,10 @@
                                 <th scope="col">No</th>
                                 <th>NIK</th>
                                 <th>Nama</th>
+                                <th>Minat Jurusan</th>
                                 <th>NO WA /Telepon</th>
                                 <th>Asal Sekolah</th>
+                                <th>Status Akademik</th>
                                 <th>File / Berkas</th>
                             </tr>
                         </thead>
@@ -81,6 +83,26 @@
                         <tr>
                             <td>Formulir Kepala Sekolah</td>
                             <td id="file_formulir_kepsek"></td>
+                        </tr>
+                        <tr>
+                            <td>Sertifikat Prestasi 1</td>
+                            <td id="file_sertifikat_1"></td>
+                        </tr>
+                        <tr>
+                            <td>Sertifikat Prestasi 2</td>
+                            <td id="file_sertifikat_2"></td>
+                        </tr>
+                        <tr>
+                            <td>Sertifikat Prestasi 3</td>
+                            <td id="file_sertifikat_3"></td>
+                        </tr>
+                        <tr>
+                            <td>Sertifikat Prestasi 4</td>
+                            <td id="file_sertifikat_4"></td>
+                        </tr>
+                        <tr>
+                            <td>Sertifikat Prestasi 5</td>
+                            <td id="file_sertifikat_5"></td>
                         </tr>
                     </tbody>
                 </table>

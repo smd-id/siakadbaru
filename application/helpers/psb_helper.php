@@ -20,5 +20,40 @@ function bm_random_rgb()
     
 }
 
+function what_akademik($kode)
+{
+    switch ($kode)
+        {
+        case 0:
+        return "NON-AKADEMIK";
+        break;
+        case 1:
+        return "AKADEMIK";
+        break;
+        case 2:
+        return "NON - AKADEMIK";
+        break;
+        }
+}
+
+function what_jurusan($kode)
+{
+    switch ($kode)
+        {
+        case "A":
+        return "IPA";
+        break;
+        case "G":
+        return "MAK";
+        break;
+        case "A-UDG":
+        return "IPA";
+        break;
+        case "G-UDG":
+        return "MAK";
+        break;
+        }
+}
+
 
 ?>
