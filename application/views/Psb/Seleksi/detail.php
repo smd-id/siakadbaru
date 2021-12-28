@@ -34,7 +34,7 @@
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <p class="lead" id="name"></p>
+                <b><p class="lead" id="name_and_nik"></p></b>
                 <table class="table table-striped" id="file_table">
                     <thead>
                         <tr>

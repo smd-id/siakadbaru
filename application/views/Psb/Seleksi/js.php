@@ -80,7 +80,8 @@ function show_file(nik)
             $('#nik_form').val(nik);
             $('#modal_file').modal('show');
             
-            $('#name').html(data.result.nama+" - "+nik);
+            $('#name_and_nik').html(data.result.nama+" - "+nik);
+            
             var html = "";
             $.each(data.result,function(key,value){
                 var keys_id = "#file_"+key;
