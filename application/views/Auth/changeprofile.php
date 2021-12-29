@@ -1,9 +1,3 @@
-    <?php 
-        $CI =& get_instance();
-        $CI->load->model('M_Costumer');
-
-        $sale_count = $CI->M_Costumer->get_by_sale_by($userdata->id)->num_rows();
-    ?>
     
     <section class="content">
       <div class="container-fluid">
@@ -17,27 +11,7 @@
                        alt="User profile picture">
                 </div>
                 <h3 class="profile-username text-center"><?= $userdata->name; ?></h3>
-                <p class="text-muted text-center"><?= $userdata->honda_id; ?> - <?= $userdata->inisial; ?></p>
-                <ul class="list-group list-group-unbordered">
-                  <li class="list-group-item">
-                    <b>Total Penjualan</b> <a class="float-right"><?= $sale_count; ?> Unit</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Masa Kerja</b> <a class="float-right"><?= selisihHari($userdata->tanggal_sign); ?> Hari</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Aktifitas</b> <a class="float-right">0 Hari</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Jabatan</b> <a class="float-right"><span class="badge badge-<?= $role['role_color']; ?>"><?= $role['role_name']; ?></span></a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>No WhatsApp</b> <a class="float-right"><?= $userdata->whatsapp; ?></a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Email</b> <a class="float-right"><?= $userdata->email; ?></a>
-                  </li>
-                </ul>
+                <p class="text-muted text-center"><?= $userdata->nik; ?></p>
               </div>
             </div>
           </div>
@@ -45,14 +19,19 @@
             <div class="card">
               <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                  <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Biodata</a></li>
                   <li class="nav-item"><a class="nav-link" href="#absensi" data-toggle="tab">Absensi</a></li>
                 </ul>
               </div>
               <div class="card-body">
                 <div class="tab-content">
                   <div class="active tab-pane" id="settings">
-                    <p>Data tidak di temukan</p>
+                    <!-- <form action="POST" id="form_profile">
+                      <div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" name="nama" id="nama" class="form-control">
+                      </div>
+                    </form> -->
                   </div>
                   <div class="tab-pane" id="absensi">
                     <div class="row">
@@ -67,8 +46,8 @@
                       <thead>
                         <tr>
                           <th>Hari/Tanggal</th>
-                          <th>Masuk</th>
-                          <th>Pulang</th>
+                          <th>Check/In</th>
+                          <th>Check/Out</th>
                           <th>Akumulasi</th>
                           <th>Keterangan</th>
                         </tr>

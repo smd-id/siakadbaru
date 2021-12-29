@@ -17,6 +17,7 @@
                             <th scope="col">No WA</th>
                             <th scope="col">No NIK</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Izin PSB</th>
                             <th scope="col">Jabatan</th>
                             <th scope="col">Status</th>
                             <th>#</th>
@@ -83,6 +84,14 @@
                                         <?php foreach ($roles as $key): ?>
                                         <option value="<?= $key->id;?>"><?= $key->role_name;?></option>
                                         <?php endforeach;?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="izin_psb">Izin PSB</label>
+                                    <select class="form-control" id="izin_psb" name="izin_psb">
+                                        <option value="">--Pilih Status--</option>
+                                        <option value="moderator">Moderator</option>
+                                        <option value="viewer">View Only</option>
                                     </select>
                                 </div>
                                 <div class="form-group">

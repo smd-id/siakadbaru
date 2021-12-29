@@ -78,10 +78,8 @@ function show_file(nik)
         success: function(data)
         {
             $('#nik_form').val(nik);
-            $('#downloadZip').attr('href', '<?= base_url('seleksiberkas/createzip/'); ?>'+nik);
-            $('#name_and_nik').html(data.result.nama+" - "+nik);
-
             $('#modal_file').modal('show');
+            $('#name_and_nik').html(data.result.nama+" - "+nik);
             
             var html = '';
             $.each(data.file,function(key,value){

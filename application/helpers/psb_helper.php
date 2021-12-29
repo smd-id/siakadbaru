@@ -44,7 +44,7 @@ function what_status_ortu($kode)
         return "Masih Hidup";
         break;
         case "meninggal":
-        return "Almarhum";
+        return "Sudah Meninggal";
         break;
         }
 }

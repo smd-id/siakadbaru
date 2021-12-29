@@ -55,6 +55,7 @@ class Manageuser extends CI_Controller
                 $row[] = $key->whatsapp;
                 $row[] = $key->nik;
                 $row[] = $key->email;
+                $row[] = $key->izin_psb;
                 $row[] = '<span class="badge bg-' . $role['role_color'] . '">' . $role['role_name'] . '</span>';
                 $row[] = $status;
                 $row[] = '<a class="btn btn-xs btn-primary '.$show_btn.'" href="javascript:void(0)" title="Edit" onclick="edit_data(' . "'" . $key->id . "'" . ')"><i class="fas fa-pen"></i></a>
@@ -92,6 +93,7 @@ class Manageuser extends CI_Controller
             'nik'   => $this->input->post('nik'),
             'email'   => $this->input->post('email'),
             'whatsapp'  => $this->input->post('whatsapp'),
+            'izin_psb'   => $this->input->post('izin_psb'),
             'status'    => $this->input->post('status'),
             'profile_picture' => 'default.png',
         ];
@@ -108,6 +110,7 @@ class Manageuser extends CI_Controller
             'nik'   => $this->input->post('nik'),
             'email'   => $this->input->post('email'),
             'whatsapp'  => $this->input->post('whatsapp'),
+            'izin_psb'  => $this->input->post('izin_psb'),
             'status'    => $this->input->post('status'),
             'profile_picture' => 'default.png',
         ];

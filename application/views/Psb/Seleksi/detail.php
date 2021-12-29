@@ -34,92 +34,142 @@
 </section>
 
 
-<!-- Modal -->
+<!-- Modal File -->
 <div class="modal fade" id="modal_file" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <b><p class="lead" id="name_and_nik"></p></b>
-                <table class="table table-striped" id="file_table">
-                    <thead>
-                        <tr>
-                            <td>Keterangan</td>
-                            <td>File</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pas Photo</td>
-                            <td id="file_pasphoto"></td>
-                        </tr>
-                        <tr>
-                            <td>Raport 1</td>
-                            <td id="file_raport_1"></td>
-                        </tr>
-                        <tr>
-                            <td>Raport 2</td>
-                            <td id="file_raport_2"></td>
-                        </tr>
-                        <tr>
-                            <td>Raport 3</td>
-                            <td id="file_raport_3"></td>
-                        </tr>
-                        <tr>
-                            <td>Raport 4</td>
-                            <td id="file_raport_4"></td>
-                        </tr>
-                        <tr>
-                            <td>SK Rangking</td>
-                            <td id="file_sk"></td>
-                        </tr>
-                        <tr>
-                            <td>Surat Pernyataan</td>
-                            <td id="file_surat_pernyataan"></td>
-                        </tr>
-                        <tr>
-                            <td>Surat Kesanggupan</td>
-                            <td id="file_surat_kesanggupan"></td>
-                        </tr>
-                        <tr>
-                            <td>Formulir Kepala Sekolah</td>
-                            <td id="file_formulir_kepsek"></td>
-                        </tr>
-                        <tr>
-                            <td>Sertifikat Prestasi 1</td>
-                            <td id="file_sertifikat_1"></td>
-                        </tr>
-                        <tr>
-                            <td>Sertifikat Prestasi 2</td>
-                            <td id="file_sertifikat_2"></td>
-                        </tr>
-                        <tr>
-                            <td>Sertifikat Prestasi 3</td>
-                            <td id="file_sertifikat_3"></td>
-                        </tr>
-                        <tr>
-                            <td>Sertifikat Prestasi 4</td>
-                            <td id="file_sertifikat_4"></td>
-                        </tr>
-                        <tr>
-                            <td>Sertifikat Prestasi 5</td>
-                            <td id="file_sertifikat_5"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <hr>
+                <div class="row">
+                    <div class="col-6">
+
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Pas Photo
+                                    <div class="float-right text-primary" id="file_pasphoto"></div>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Raport Semester 1
+                                    <div class="float-right text-primary" id="file_raport_1"></div>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Raport Semester 2
+                                    <span class="float-right text-primary" id="file_raport_2"></span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Raport Semester 3
+                                    <span class="float-right text-primary" id="file_raport_3"></span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Raport Semester 4
+                                    <span class="float-right text-primary" id="file_raport_4"></span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    SK Rangking Sekolah
+                                    <span class="float-right text-primary" id="file_sk"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Surat Pernyataan
+                                    <span class="float-right text-primary" id="file_surat_pernyataan"></span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Surat Kesanggupan Membiayai
+                                    <span class="float-right text-primary" id="file_surat_kesanggupan"></span>
+                                </a>
+                            </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    Formulir Isian Kepala Sekolah
+                                    <span class="float-right text-primary" id="file_formulir_kepsek"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Sertifikat Prestasi 1
+                            <span class="float-right text-primary" id="file_sertifikat_1"></span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Sertifikat Prestasi 2
+                            <span class="float-right text-primary" id="file_sertifikat_2"></span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Sertifikat Prestasi 3
+                            <span class="float-right text-primary" id="file_sertifikat_3"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Sertifikat Prestasi 4
+                            <span class="float-right text-primary" id="file_sertifikat_4"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            Sertifikat Prestasi 5
+                            <span class="float-right text-primary" id="file_sertifikat_5"></span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- <center>
+                    <a class="btn btn-primary btn-sm" id="downloadZip" target="_blank"><i class="fas fa-download"></i> Download ZIP</a>
+                </center> -->
             </div>
             <div class="modal-footer">
+                <?php if($userdata->izin_psb == 'admin' or $userdata->izin_psb == 'moderator'): ?>
                 <form action="POST" id="aksi_luluskan">
                     <input type="hidden" id="nik_form" value="" required>
                     <button type="button" class="btn btn-sm btn-success" id="btnLuluskan" onclick="luluskan()"><i class="fas fa-check"></i> Luluskan</button>
                 </form>
                 <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Abaikan</button>
+                <?php else: ?>
+                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal"><i class="fas fa-times"></i> Tutup</button>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- Modal -->
+<!-- Modal Biodata -->
 <div class="modal fade" id="modal_biodata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">

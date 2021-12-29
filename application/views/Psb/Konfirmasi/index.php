@@ -12,7 +12,9 @@
                             <th scope="col">No Telepon / WA</th>
                             <th scope="col">NIK</th>
                             <th scope="col">Struk</th>
+                            <?php if(check_izin_psb() == TRUE): ?>
                             <th scope="col">#</th>
+                            <?php endif; ?>
                         </tr>
                     </thead>
                     <tbody>

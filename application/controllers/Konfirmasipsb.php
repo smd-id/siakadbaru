@@ -40,8 +40,10 @@ class Konfirmasipsb extends CI_Controller {
                 $row[] = $key->no_telepon;
                 $row[] = $key->nik;
                 $row[] = '<a class="btn btn-xs btn-primary" onclick="viewFile(' ."'" . $file->struk."'" . ')"><i class="fas fa-eye"></i> Show File</a>';
-                $row[] = '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Konfirmasi" onclick="konfirmasi(' . "'" . $key->id . "'" . ')"><i class="fas fa-check"></i> Konfirmasi</a>
-                <a class="btn btn-xs btn-danger" href="javascript:void(0)" title="Reject" onclick="reject(' . "'" . $key->id . "'" . ')"><i class="fas fa-times"></i> Reject</a>';
+                if(check_izin_psb() == TRUE){
+                    $row[] = '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Konfirmasi" onclick="konfirmasi(' . "'" . $key->id . "'" . ')"><i class="fas fa-check"></i> Konfirmasi</a>
+                    <a class="btn btn-xs btn-danger" href="javascript:void(0)" title="Reject" onclick="reject(' . "'" . $key->id . "'" . ')"><i class="fas fa-times"></i> Reject</a>';
+                }
 
                 $data[] = $row;
             }

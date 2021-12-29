@@ -77,6 +77,7 @@ function edit_data(id)
             $('[name="role_id"]').val(data.role_id);
             $('[name="nik"]').val(data.nik);
             $('[name="email"]').val(data.email);
+            $('[name="izin_psb"]').val(data.izin_psb);
             $('[name="status"]').val(data.status);
             $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
             $('.modal-title').text('Edit User'); // Set title to Bootstrap modal title

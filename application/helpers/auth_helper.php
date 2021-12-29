@@ -30,4 +30,18 @@ function check_login()
         redirect('auth');
     }
 }
+
+function check_izin_psb()
+{
+    $ci = &get_instance();
+    $id = $ci->session->userdata('id');
+
+    $izin = $ci->db->get_where('users', ['id' => $id])->row();
+
+    if ($izin->izin_psb == 'admin' OR $izin->izin_psb == 'moderator'){
+        return TRUE;
+    } else {
+        return FALSE;
+    }
+}
 ?>

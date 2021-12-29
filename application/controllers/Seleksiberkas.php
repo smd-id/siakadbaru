@@ -47,7 +47,6 @@ class Seleksiberkas extends CI_Controller {
 
                 $no++;
                 
-                
                 $row = array();
                 $row[] = $no;
                 $row[] = $key->nik;
@@ -169,6 +168,36 @@ class Seleksiberkas extends CI_Controller {
             echo json_encode(array("result" => $data, "file" => $file));
         } else {
             exit('Error');
+        }
+    }
+
+    public function createzip($nik)
+    {
+        $get = $this->M_Berkas->get_file($nik)->row();
+
+        $file = [
+            'pasphoto'.'/'.$get->pasphoto,
+            'raport_1'.'/'.$get->raport_1,  
+            'raport_2'.'/'.$get->raport_2,  
+            'raport_3'.'/'.$get->raport_3,  
+            'raport_4'.'/'.$get->raport_4,
+            'sk'.'/'.$get->sk,
+            'surat_pernyataan'.'/'.$get->surat_pernyataan,
+            'surat_kesanggupan'.'/'.$get->surat_kesanggupan,
+            'formulir_kepsek'.'/'.$get->formulir_kepsek,
+            'sertifikat_1'.'/'.$get->sertifikat_1,
+            'sertifikat_2'.'/'.$get->sertifikat_2,
+            'sertifikat_3'.'/'.$get->sertifikat_3,
+            'sertifikat_4'.'/'.$get->sertifikat_4,
+            'sertifikat_5'.'/'.$get->sertifikat_5,
+        ];
+        
+        foreach ($file as $key) {
+            $path = psb_url('uploads/').$key;
+            $new_path = $key;
+            $this->zip->read_file($path);
+            
+            $this->zip->download('Berkas Santri-'.$nik.'.zip');
         }
     }
 
