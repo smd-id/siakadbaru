@@ -89,7 +89,7 @@ class M_Konfirmasi extends CI_Model
 
     public function count_mohon_konfirmasi()
     {
-        $this->db->where('s_payment', 3);
+        $this->db->where('s_payment', '3');
         $this->db->from($this->table);
         $query = $this->db->get();
         return $query->num_rows();

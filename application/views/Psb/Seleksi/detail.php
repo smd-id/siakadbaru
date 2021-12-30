@@ -1,13 +1,11 @@
 <section class="content">
     <div class="row">
-        <div class="col-md-12">
-            <div class="button-group mb-2">
-                <button onclick="history.back()" class="btn btn-md btn-danger"><i class="fas fa-arrow-left"></i> Back</button>
-                <button onclick="reload_table()" class="btn btn-md btn-info"><i class="fas fa-sync"></i> Reload</button>
-            </div>
+        <div class="col-md-12">            
             <div class="card">
-                <div class="card-header">
+                <div class="card-header">               
                     <div class="card-title">
+                        <button class="btn btn-danger btn-xs" onclick="history.back()"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button class="btn btn-info btn-xs" onclick="reload_table()"><i class="fas fa-sync"></i> Reload</button>
                         Peserta - <?= $nama_kabupaten; ?>
                     </div>
                 </div>
