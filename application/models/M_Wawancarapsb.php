@@ -16,6 +16,14 @@ class M_Wawancarapsb extends CI_Model
         $query = $this->db->get();
         return $query->row();
     }
+
+    public function get_by_nik($nik)
+    {
+        $this->db->where('nik', $nik);
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->row();
+    }
     
     public function update_by_id($id, $data)
     {
@@ -29,12 +37,6 @@ class M_Wawancarapsb extends CI_Model
         $this->db->where('nik', $nik);
         $this->db->update($this->table, $data);
         return $this->db->affected_rows();
-    }
-
-    public function insert($data)
-    {
-        $this->db->insert($this->table, $data);
-        return $this->db->insert_id();
     }
     
 }
