@@ -169,5 +169,15 @@ class M_Peserta extends CI_Model
 
         return $query->result();
     }
+
+
+    // Sementara
+
+    public function get_all()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->result();
+    }
     
 }
