@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">
-                            Peserta Jalur Undangan
+                            Peserta Jalur Reguler
                         </div>                    
                     </div>
                     <div class="card-body">
@@ -27,16 +27,20 @@
                             <tbody>
                                 <?php $i = 1; ?>
                                 <?php foreach($result as $key): ?>
+                                <?php 
+                                    $file = $this->M_Listpeserta->get_file($key->nik)->row(); 
+                                ?>
                                 <tr>
                                     <td><?= $i; ?></td>
                                     <td><?= $key->nik; ?></td>
                                     <td><?= $key->nama; ?></td>
                                     <td><?= $key->no_telepon; ?></td>
                                     <td><?= $key->asal_sekolah; ?></td>
-                                    <td><?= $key->jurusan; ?></td>
+                                    <td><?= jurusan($key->jurusan); ?></td>
+
 
                                     <?php if ($key->s_payment == '1'): ?>
-                                    <td><?= '<a href="javascript:void(0)" title="Show Biodata" onclick="show_struk(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> '.sudah_belum($key->s_payment).'</a>'; ?></td>
+                                    <td><?= '<a href="javascript:void(0)" title="Show Biodata" onclick="show_struk(' . "'" . $file->struk . "'" . ')"><span class="badge badge-success">Lihat Struk</span></a>'; ?></td>
                                     <?php else: ?>
                                     <td><?= sudah_belum($key->s_payment); ?></td>
                                     <?php endif; ?>
