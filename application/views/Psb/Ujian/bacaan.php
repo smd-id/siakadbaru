@@ -67,13 +67,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Jali</label>
-                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" minlength="0" maxlength="50" onkeyup="count()" required>
+                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" min="0" max="50" onkeyup="count()" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Kafi</label>
-                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" minlength="0" maxlength="50" onkeyup="count()" required>
+                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" min="0" max="50" onkeyup="count()" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -87,7 +87,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Jumlah Hafalan</label>
-                                        <input type="number" name="jumlah_hafalan" id="jumlah_hafalan" class="form-control" required>
+                                        <input type="number" name="jumlah_hafalan" id="jumlah_hafalan" min="0" max="30" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
