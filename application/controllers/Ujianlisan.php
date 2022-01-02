@@ -123,6 +123,6 @@ class Ujianlisan extends CI_Controller {
 			'title' => "Ujian Lisan / Wawancara",
             'result'  =>  $this->M_Wawancarapsb->get_done()->result()
 		];
-        $this->load->view('Psb/Ujian/view-excel', $data);
+        $this->load->view('Psb/Ujian/excel-view', $data);
     }
 }

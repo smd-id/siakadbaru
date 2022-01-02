@@ -125,8 +125,8 @@
 				<td><?= $key->keterangan_hafalan; ?></td>
 				<td><?= $key->keterangan_ibadah; ?></td>
 				<td><?= $key->keterangan_interview; ?></td>
-				
 			</tr>
+		<?php $i++; ?>	
 		<?php endforeach; ?>
 		</tbody>
 	</table>
