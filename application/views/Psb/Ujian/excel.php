@@ -89,7 +89,7 @@ header("Content-Disposition: attachment; filename=hasil.xls");
 			<tr>
 				<td><?= $i; ?></td>
 				<td><?= $key->no_ujian; ?></td>
-				<td><?= $key->nik; ?></td>
+				<td><?= "'".$key->nik; ?></td>
 				<td><?= $key->nama; ?></td>
 				<td><?= jenis_kelamin($key->jenis_kelamin); ?></td>
 				<td><?= jurusan($key->jurusan); ?></td>
