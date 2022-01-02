@@ -23,6 +23,24 @@
                     </center>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        Report Hasil Ujian
+                    </div>
+                </div>
+                <div class="card-body">
+                    <center>
+                        <a class="btn btn-app bg-primary" href="<?= base_url('ujianlisan/excel'); ?>">
+                            <i class="fas fa-file-excel"></i> Excel
+                        </a>
+
+                        <a class="btn btn-app bg-secodary" href="<?= base_url('ujianlisan/view'); ?>">
+                            <i class="fas fa-eye"></i> Lihat Saja
+                        </a>
+                    </center>
+                </div>
+            </div>
         </div>
     </div>
 </section>

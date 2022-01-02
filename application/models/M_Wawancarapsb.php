@@ -38,5 +38,18 @@ class M_Wawancarapsb extends CI_Model
         $this->db->update($this->table, $data);
         return $this->db->affected_rows();
     }
+
+    public function get_done()
+    {
+        $query = $this->db
+        ->select('*')
+        ->from ('wawancara_psb')
+        ->join ('peserta_psb', 'peserta_psb.nik = wawancara_psb.nik')
+        ->where("wawancara_psb.step_1",'1')
+        ->where("wawancara_psb.step_2",'1')
+        ->where("wawancara_psb.step_3",'1')
+        ->get();
+        return $query;
+    }
     
 }

@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
 class Ujianlisan extends CI_Controller {
 
 	public function __construct()
@@ -17,7 +18,6 @@ class Ujianlisan extends CI_Controller {
 		$data = [
 			'title' => "Ujian Lisan / Wawancara",
 			'content' => "Psb/Ujian/index",
-			'costum_js' => "Psb/Ujian/js",
 		];
 		
 		echo $this->template->views($data);
@@ -102,5 +102,27 @@ class Ujianlisan extends CI_Controller {
         } else {
             exit('Maaf tidak di izinkan melakukan aksi');
         }
+    }
+
+
+    // REPORT
+    public function excel()
+    {
+        
+        $data = [
+			'title' => "Ujian Lisan / Wawancara",
+            'result'  =>  $this->M_Wawancarapsb->get_done()->result()
+		];
+        $this->load->view('Psb/Ujian/excel', $data);
+    }
+
+    public function view()
+    {
+        
+        $data = [
+			'title' => "Ujian Lisan / Wawancara",
+            'result'  =>  $this->M_Wawancarapsb->get_done()->result()
+		];
+        $this->load->view('Psb/Ujian/view-excel', $data);
     }
 }

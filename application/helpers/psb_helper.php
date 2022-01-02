@@ -119,5 +119,56 @@ function sudah_belum($id)
     }
 }
 
+function baik_or_no($key)
+{
+    switch ($key)
+    {
+        case "1":
+        return "SANGAT BAIK";
+        break;
+        case "2":
+        return "SANGAT BAIK";
+        break;
+        case "3":
+        return "CUKUP";
+        break;
+        case "4":
+        return "KURANG";
+        break;
+    }
+}
+
+function rekom_or_no($key)
+{
+    switch ($key)
+    {
+        case "1":
+        return "REKOM SEKALI";
+        break;
+        case "2":
+        return "REKOM";
+        break;
+        case "3":
+        return "KURANG REKOM";
+        break;
+        case "4":
+        return "TIDAK REKOM";
+        break;
+    }
+}
+
+function pernah_or_no($key)
+{
+    switch ($key)
+    {
+        case "1":
+        return "PERNAH";
+        break;
+        case "2":
+        return "TIDAK PERNAH";
+        break;
+    }
+}
+
 
 ?>
