@@ -17,10 +17,12 @@
                                     <th>Nama</th>
                                     <th>No Telepon</th>
                                     <th>Asal Sekolah</th>
+                                    <th>Asal Daeran</th>
                                     <th>Biodata</th>
                                     <th>Berkas</th>
                                     <th>Ujian VIA</th>
                                     <th>Status Cetak</th>
+                                    <th>Status Kelulusan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,6 +34,7 @@
                                     <td><?= $key->nama; ?></td>
                                     <td><?= $key->no_telepon; ?></td>
                                     <td><?= $key->asal_sekolah; ?></td>
+                                    <td><?= what_kabupaten($key->kabupaten); ?></td>
                                     <?php if ($key->s_biodata == '1'): ?>
                                     <td><?= '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Show Biodata" onclick="show_biodata(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> Biodata</a>'; ?></td>
                                     <?php else: ?>
@@ -51,6 +54,12 @@
                                     <?php endif; ?>
 
                                     <td><?= sudah_belum($key->s_cetak); ?></td>
+
+                                    <?php if ($key->s_lulus == '0'): ?>
+                                    <td><?= '<a class="btn btn-xs btn-primary" href="'.base_url('listpeserta/luluskan/').$key->nik.'" title="Show File"><i class="fas fa-check"></i> Luluskan</a>'; ?></td>
+                                    <?php else: ?>
+                                    <td><span class="badge badge-success">LULUS</span></td>
+                                    <?php endif; ?>
                                 </tr>
                                 <?php $i++; ?>
                                 <?php endforeach; ?>

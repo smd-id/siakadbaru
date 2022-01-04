@@ -36,8 +36,9 @@ class M_Listpeserta extends CI_Model
         return $query->result();
     }
 
-    public function get_by_lulus_adm()
+    public function get_by_lulus_adm_undangan()
     {
+        $this->db->where('jalur', 'undangan');
         $this->db->where('s_payment', '1');
         $this->db->where('s_biodata', '1');
         $this->db->where('s_file', '1');

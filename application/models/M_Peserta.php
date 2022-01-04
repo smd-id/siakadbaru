@@ -86,6 +86,15 @@ class M_Peserta extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function update_by_nik($nik, $data)
+    {
+        $this->db->where('nik', $nik);
+        $this->db->update($this->table, $data);
+        return $this->db->affected_rows();
+    }
+
+
+
     public function get_file($nik)
     {
         $query = $this->db
@@ -168,6 +177,14 @@ class M_Peserta extends CI_Model
             ->get();
 
         return $query->result();
+    }
+
+    public function get_by($by, $val)
+    {
+        $this->db->where($by, $val);
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->row();
     }
     
 }
