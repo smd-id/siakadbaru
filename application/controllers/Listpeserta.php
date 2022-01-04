@@ -8,6 +8,7 @@ class Listpeserta extends CI_Controller
         parent::__construct();
         check_login();
         $this->load->model('M_Listpeserta');
+        $this->load->model('M_Peserta');
         $this->load->model('M_Konfirmasi');
     }
 
@@ -135,7 +136,7 @@ class Listpeserta extends CI_Controller
             'title'     => 'List Peserta Lulus ADM',
             'content'   => 'Psb/Listpeserta/lulusadm',
             'costum_js' => 'Psb/Listpeserta/js',
-            'result'    =>  $this->M_Listpeserta->get_by_lulus_adm()
+            'result'    =>  $this->M_Listpeserta->get_by_lulus_adm_undangan()
         ];
         echo $this->template->views($data);
     }
@@ -160,5 +161,22 @@ class Listpeserta extends CI_Controller
             'result'    =>  $this->M_Listpeserta->get_lulus_by('reguler')
         ];
         echo $this->template->views($data);
+    }
+
+    public function luluskan($nik)
+    {
+        $data = [
+            's_lulus' => "1"
+        ];
+        $payload = $this->M_Peserta->update_by_nik($nik, $data);
+        if ($payload){
+            $this->session->set_flashdata([
+                'msg' => 'Berhasil Meluluskan NIK : '.$nik,
+                'type' => 'success'
+            ]);
+        
+            redirect('listpeserta/lulusadm');
+        }
+
     }
 }

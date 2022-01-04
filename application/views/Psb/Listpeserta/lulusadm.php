@@ -22,6 +22,7 @@
                                     <th>Berkas</th>
                                     <th>Ujian VIA</th>
                                     <th>Status Cetak</th>
+                                    <th>Status Kelulusan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -53,6 +54,12 @@
                                     <?php endif; ?>
 
                                     <td><?= sudah_belum($key->s_cetak); ?></td>
+
+                                    <?php if ($key->s_lulus == '0'): ?>
+                                    <td><?= '<a class="btn btn-xs btn-primary" href="'.base_url('listpeserta/luluskan/').$key->nik.'" title="Show File"><i class="fas fa-check"></i> Luluskan</a>'; ?></td>
+                                    <?php else: ?>
+                                    <td><span class="badge badge-success">LULUS</span></td>
+                                    <?php endif; ?>
                                 </tr>
                                 <?php $i++; ?>
                                 <?php endforeach; ?>

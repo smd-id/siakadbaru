@@ -86,6 +86,15 @@ class M_Peserta extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function update_by_nik($nik, $data)
+    {
+        $this->db->where('nik', $nik);
+        $this->db->update($this->table, $data);
+        return $this->db->affected_rows();
+    }
+
+
+
     public function get_file($nik)
     {
         $query = $this->db
