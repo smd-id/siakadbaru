@@ -32,6 +32,15 @@ class Listpeserta extends CI_Controller
                 'sertifikat_3'              => $get->sertifikat_3,
                 'sertifikat_4'              => $get->sertifikat_4,
                 'sertifikat_5'              => $get->sertifikat_5,
+                'surat_sehat'               => $get->surat_sehat,
+                'surat_tidakpindahjurusan'  => $get->surat_tidakpindahjurusan,
+                'bpjs'                      => $get->bpjs,
+                'kip'                       => $get->kip,
+                'ktp_ayah'                  => $get->ktp_ayah,
+                'ktp_ibu'                   => $get->ktp_ibu,
+                'ktp_wali'                  => $get->ktp_wali,
+                'kk'                        => $get->kk,
+                'akte'                      => $get->akte,
             ];
 
             $data = [
