@@ -60,12 +60,23 @@ function show_biodata(nik)
     
 }
 
-function viewFile(link)
+function viewStruk(link)
 {
     
     var url = "https://cdn.ruhulislam.com/uploads/struk_daftarulang/"+link;
 
-    newwindow=window.open(url,'View File','height=720,width=1280,screenX=400,screenY=350');
+    newwindow=window.open(url,'View File','height=720,width=1280');
+        if (window.focus) {newwindow.focus()}
+    return false;
+
+}
+
+function viewFile(d)
+{
+    var path = d.getAttribute("data-id");
+    var url = "https://cdn.ruhulislam.com/uploads/"+path;
+
+    newwindow=window.open(url,'View File','height=720,width=1280');
         if (window.focus) {newwindow.focus()}
     return false;
 

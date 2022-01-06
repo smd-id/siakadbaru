@@ -21,7 +21,7 @@
                                     <th>Bukti Pembayaran</th>
                                     <th>Biodata</th>
                                     <th>Berkas</th>
-                                    <th>Status Cetak</th>
+                                    <th>#</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,7 +37,7 @@
                                    
 
                                     <?php if ($key->struk_daftarulang !== ''): ?>
-                                    <td><?= '<a class="btn btn-xs btn-info" href="javascript:void(0)" title="Show File" onclick="viewFile(' . "'" . $key->struk_daftarulang . "'" . ')"><i class="fas fa-eye"></i> Struk</a>'; ?></td>
+                                    <td><?= '<a class="btn btn-xs btn-info" href="javascript:void(0)" title="Show File" onclick="viewStruk(' . "'" . $key->struk_daftarulang . "'" . ')"><i class="fas fa-eye"></i> Struk</a>'; ?></td>
                                     <?php else: ?>
                                     <td><span class="badge badge-info">Belum</span></td>
                                     <?php endif; ?>
@@ -54,7 +54,11 @@
                                     <td><span class="badge badge-info">Belum</span></td>
                                     <?php endif; ?>
 
-                                    <td><?= sudah_belum($key->s_cetak); ?></td>
+                                    <?php if ($key->s_daftar_ulang == '1'): ?>
+                                    <td><?= '<a class="btn btn-xs btn-primary" href="'.base_url('daftarulang/verifikasi/').$key->nik.'" title="Show File"><i class="fas fa-check"></i> Verifikasi Data</a>'; ?></td>
+                                    <?php else: ?>
+                                    <td><span class="badge badge-success">Sudah Verifikasi</span></td>
+                                    <?php endif; ?>
                                 
                                 </tr>
                                 <?php $i++; ?>

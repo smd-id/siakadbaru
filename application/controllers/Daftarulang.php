@@ -8,6 +8,7 @@ class Daftarulang extends CI_Controller
         parent::__construct();
         check_login();
         $this->load->model('M_Daftarulang');
+        $this->load->model('M_Peserta');
     }   
     
     public function index()
@@ -21,5 +22,22 @@ class Daftarulang extends CI_Controller
              
         ];
         echo $this->template->views($data);
+    }
+
+    public function verifikasi($nik)
+    {
+        $data = [
+            's_daftar_ulang' => "2"
+        ];
+        $payload = $this->M_Peserta->update_by_nik($nik, $data);
+        if ($payload){
+            $this->session->set_flashdata([
+                'msg' => 'Berhasil Verifikasi NIK : '.$nik,
+                'type' => 'success'
+            ]);
+        
+            redirect('daftarulang');
+        }
+
     }
 }
