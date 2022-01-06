@@ -42,22 +42,22 @@
                                     <td><span class="badge badge-info">Belum</span></td>
                                     <?php endif; ?>
 
-                                    <?php if ($key->s_biodata == '1'): ?>
+                                    <?php if ($key->s_biodata_ulang == '1'): ?>
                                     <td><?= '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Show Biodata" onclick="show_biodata(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> Biodata</a>'; ?></td>
                                     <?php else: ?>
-                                    <td><span class="badge badge-info">Belum</span></td>
+                                    <td><?= '<span class="badge badge-danger" type="button" onclick="show_biodata(' . "'" . $key->nik . "'" . ')">Belum Lengkap</span>'; ?></td>
                                     <?php endif; ?>
 
-                                    <?php if ($key->s_file == '1'): ?>
+                                    <?php if ($key->s_berkas_ulang == '1'): ?>
                                     <td><?= '<a class="btn btn-xs btn-primary" href="javascript:void(0)" title="Show File" onclick="show_file(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> File</a>'; ?></td>
                                     <?php else: ?>
-                                    <td><span class="badge badge-info">Belum</span></td>
+                                        <td><?= '<span class="badge badge-danger" type="button" onclick="show_file(' . "'" . $key->nik . "'" . ')">Belum Lengkap</span>'; ?></td>
                                     <?php endif; ?>
-
+                                        
                                     <?php if ($key->s_daftar_ulang == '1'): ?>
-                                    <td><?= '<a class="btn btn-xs btn-primary" href="'.base_url('daftarulang/verifikasi/').$key->nik.'" title="Show File"><i class="fas fa-check"></i> Verifikasi Data</a>'; ?></td>
+                                        <td><?= '<a class="btn btn-xs btn-primary" href="'.base_url('daftarulang/verifikasi/').$key->nik.'" title="Show File"><i class="fas fa-check"></i> Verifikasi Data</a>'; ?></td>
                                     <?php else: ?>
-                                    <td><span class="badge badge-success">Sudah Verifikasi</span></td>
+                                        <td><span class="badge badge-success">Sudah Verifikasi</span></td>
                                     <?php endif; ?>
                                 
                                 </tr>

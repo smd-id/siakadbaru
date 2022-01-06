@@ -21,9 +21,7 @@ class M_Daftarulang extends CI_Model
         $query = $this->db
         ->select('*')
         ->from ('peserta_psb')
-        ->join ('file_psb', 'file_psb.nik = peserta_psb.nik')
-        ->where('s_berkas_ulang', '1')
-        ->where('s_biodata_ulang', '1')
+        ->join ('file_psb', 'file_psb.nik = peserta_psb.nik')        
         ->where_not_in('s_daftar_ulang', '0')        
         ->get();
         return $query;
