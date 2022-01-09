@@ -100,7 +100,7 @@ function reload_table()
 
 function viewFile(file)
 {
-    var url = "<?= psb_url('uploads/struk/'); ?>"+file;
+    var url = "<?= cdn_url('uploads/struk/'); ?>"+file;
     newwindow=window.open(url,'View File','height=720,width=1280,screenX=400,screenY=350');
         if (window.focus) {newwindow.focus()}
     return false;
