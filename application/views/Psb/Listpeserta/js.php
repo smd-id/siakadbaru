@@ -64,7 +64,7 @@ function show_biodata(nik)
 function viewFile(d)
 {
     var path = d.getAttribute("data-id");
-    var url = "https://cdn.ruhulislam.com/uploads/"+path;
+    var url = "<?= cdn_file('uploads/'); ?>"+path;
 
     newwindow=window.open(url,'View File','height=720,width=1280,screenX=400,screenY=350');
         if (window.focus) {newwindow.focus()}
@@ -74,7 +74,7 @@ function viewFile(d)
 
 function show_struk(file)
 {
-    var url = "<?= psb_url('uploads/struk/'); ?>"+file;
+    var url = "<?= cdn_file('uploads/struk/'); ?>"+file;
     newwindow=window.open(url,'View File','height=720,width=1280,screenX=400,screenY=350');
         if (window.focus) {newwindow.focus()}
     return false;

@@ -105,13 +105,13 @@ class Listpeserta extends CI_Controller
             'content'                       => 'Psb/Listpeserta/index',
             'costum_js'                     => 'Psb/Listpeserta/js',
             'total_mohon_konfirmasi'        => $this->M_Konfirmasi->count_mohon_konfirmasi(),
-            'total_undangan'                => $this->M_Listpeserta->count_by_jalur('undangan'),
-            'total_reguler'                 => $this->M_Listpeserta->count_by_jalur('reguler'),
-            'total_lulus_adm'               => $this->M_Listpeserta->count_lulus_adm(),
-            'total_lulus_reguler'           => $this->M_Listpeserta->count_lulus_reguler('1'),
-            'total_lulus_undangan'          => $this->M_Listpeserta->count_lulus_undangan('1'),
-            'total_siasia'                  => $this->M_Listpeserta->count_sia_sia(),
-            'total_belum_cetak'             => $this->M_Listpeserta->count_belum_cetak(),            
+            'total_undangan'                => $this->M_Listpeserta->get_by_jalur('undangan')->num_rows(),
+            'total_reguler'                 => $this->M_Listpeserta->get_by_jalur('reguler')->num_rows(),
+            'total_lulus_adm'               => $this->M_Listpeserta->get_by_lulus_adm_undangan()->num_rows(),
+            'total_lulus_reguler'           => $this->M_Listpeserta->get_lulus_by('reguler')->num_rows(),
+            'total_lulus_undangan'          => $this->M_Listpeserta->get_lulus_by('undangan')->num_rows(),
+            'total_siasia'                  => $this->M_Listpeserta->get_sia_sia()->num_rows(),
+            'total_belum_cetak'             => $this->M_Listpeserta->get_belum_cetak()->num_rows(),            
         ];
         echo $this->template->views($data);
     }
@@ -122,7 +122,7 @@ class Listpeserta extends CI_Controller
             'title'     => 'List Peserta Undangan',
             'content'   => 'Psb/Listpeserta/undangan',
             'costum_js' => 'Psb/Listpeserta/js',
-            'result'    =>  $this->M_Listpeserta->get_by_jalur('undangan')
+            'result'    =>  $this->M_Listpeserta->get_by_jalur('undangan')->result()
         ];
         echo $this->template->views($data);
     }
@@ -133,7 +133,7 @@ class Listpeserta extends CI_Controller
             'title'     => 'List Peserta Reguler',
             'content'   => 'Psb/Listpeserta/reguler',
             'costum_js' => 'Psb/Listpeserta/js',
-            'result'    =>  $this->M_Listpeserta->get_by_jalur('reguler')
+            'result'    =>  $this->M_Listpeserta->get_by_jalur('reguler')->result()
         ];
         echo $this->template->views($data);
     }
@@ -145,7 +145,7 @@ class Listpeserta extends CI_Controller
             'title'     => 'List Peserta Lulus ADM',
             'content'   => 'Psb/Listpeserta/lulusadm',
             'costum_js' => 'Psb/Listpeserta/js',
-            'result'    =>  $this->M_Listpeserta->get_by_lulus_adm_undangan()
+            'result'    =>  $this->M_Listpeserta->get_by_lulus_adm_undangan()->result()
         ];
         echo $this->template->views($data);
     }
@@ -156,7 +156,7 @@ class Listpeserta extends CI_Controller
             'title'     => 'List Peserta Lulus Undangan',
             'content'   => 'Psb/Listpeserta/lulusundangan',
             'costum_js' => 'Psb/Listpeserta/js',
-            'result'    =>  $this->M_Listpeserta->get_lulus_by('undangan')
+            'result'    =>  $this->M_Listpeserta->get_lulus_by('undangan')->result()
         ];
         echo $this->template->views($data);
     }
@@ -167,7 +167,7 @@ class Listpeserta extends CI_Controller
             'title'     => 'List Peserta Lulus Reguler',
             'content'   => 'Psb/Listpeserta/lulusreguler',
             'costum_js' => 'Psb/Listpeserta/js',
-            'result'    =>  $this->M_Listpeserta->get_lulus_by('reguler')
+            'result'    =>  $this->M_Listpeserta->get_lulus_by('reguler')->result()
         ];
         echo $this->template->views($data);
     }
@@ -187,5 +187,16 @@ class Listpeserta extends CI_Controller
             redirect('listpeserta/lulusadm');
         }
 
+    }
+
+    public function siasia()
+    {
+        $data = [
+            'title'     => 'Peserta Sia Sia',
+            'content'   => 'Psb/Listpeserta/siasia',
+            'costum_js' => 'Psb/Listpeserta/js',
+            'result'    =>  $this->M_Listpeserta->get_sia_sia()->result()
+        ];
+        echo $this->template->views($data);
     }
 }

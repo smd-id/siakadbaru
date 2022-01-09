@@ -17,7 +17,7 @@
                                     <th>Nama</th>
                                     <th>No Telepon</th>
                                     <th>Asal Sekolah</th>
-                                    <th>Asal Daeran</th>
+                                    <th>Asal Daerah</th>
                                     <th>Biodata</th>
                                     <th>Berkas</th>
                                     <th>Ujian VIA</th>

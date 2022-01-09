@@ -5,6 +5,11 @@ function psb_url($path = NULL)
     return "https://psb.ruhulislam.com/".$path;
 }
 
+function cdn_file($path = NULL)
+{
+    return "https://cdn.ruhulislam.com/".$path;
+}
+
 function cdn_url($path = NULL)
 {
     return "https://cdn.ruhulislam.com/".$path;

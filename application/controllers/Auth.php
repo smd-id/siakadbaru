@@ -73,6 +73,7 @@ class Auth extends CI_Controller
         $data = [
             'title' => "Register",
             'content' => "Auth/register",
+            'costum_js' => "Auth/js-register"
         ];
         echo $this->template->auth($data);
     }
@@ -112,6 +113,17 @@ class Auth extends CI_Controller
                 ]);
             }
             redirect('auth');
+        }
+    }
+
+    public function checkuser($user)
+    {
+        $check = $this->M_Users->get_by_username($user);
+
+        if ($check){
+            echo json_encode(array("status" => false));
+        } else {
+            echo json_encode(array("status" => true));
         }
     }
 

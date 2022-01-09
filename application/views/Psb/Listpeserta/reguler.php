@@ -17,6 +17,7 @@
                                     <th>Nama</th>
                                     <th>No Telepon</th>
                                     <th>Asal Sekolah</th>
+                                    <th>Asal Jalur</th>
                                     <th>Jurusan</th>
                                     <th>Pembayaran</th>
                                     <th>Biodata</th>
@@ -36,6 +37,13 @@
                                     <td><?= $key->nama; ?></td>
                                     <td><?= $key->no_telepon; ?></td>
                                     <td><?= $key->asal_sekolah; ?></td>
+
+                                    <?php if ($key->jalur_awal == "undangan"): ?>
+                                    <td><span class="badge badge-danger">UDG</span> <span class="badge badge-info">REG</span></td>
+                                    <?php else: ?>
+                                    <td><span class="badge badge-info">REG</span></td>
+                                    <?php endif; ?>
+
                                     <td><?= jurusan($key->jurusan); ?></td>
 
 

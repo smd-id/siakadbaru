@@ -32,7 +32,7 @@
                                     <td><?= $key->nama; ?></td>
                                     <td><?= $key->no_telepon; ?></td>
                                     <td><?= $key->asal_sekolah; ?></td>
-                                    <td><?= what_jurusan($key->asal_jurusan); ?></td>
+                                    <td><?= jurusan($key->jurusan); ?></td>
                                     
                                     <?php if ($key->s_biodata == '1'): ?>
                                     <td><?= '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Show Biodata" onclick="show_biodata(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> Biodata</a>'; ?></td>

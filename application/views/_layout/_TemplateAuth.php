@@ -246,6 +246,30 @@
 ?>
 
 <script>
+$(document).ready(function() {
+    $('#username').change(function(){ 
+        var username = $('#username').val();
+        $.ajax({
+            url : "<?= base_url('auth/checkuser/');?>"+username,
+            method : "GET",
+            async : true,
+            success: function(data){
+                const obj = JSON.parse(data);
+                var sts = obj.status;
+                if (sts == false){
+                    mySwalalert('Username Sudah Terdaftar', 'error');
+                    $('#username').addClass('is-invalid');
+                    $('#username').val('');
+                } else if (sts == true){
+                    $('#username').removeClass('is-invalid');
+                    $('#username').addClass('is-valid');
+                }
+                
+            }
+        });
+        return false;
+    });
+});
 
 function showPassword()
 {

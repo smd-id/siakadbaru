@@ -17,6 +17,7 @@
                                     <th>Nama</th>
                                     <th>No Telepon</th>
                                     <th>Asal Sekolah</th>
+                                    <th>Pindah Jalur</th>
                                     <th>Biodata</th>
                                     <th>Berkas</th>
                                     <th>Status ADM</th>
@@ -32,6 +33,13 @@
                                     <td><?= $key->nama; ?></td>
                                     <td><?= $key->no_telepon; ?></td>
                                     <td><?= $key->asal_sekolah; ?></td>
+
+                                    <?php if ($key->jalur_awal == $key->jalur): ?>
+                                    <td><span class="badge badge-danger">Tidak Pindah</span></td>
+                                    <?php else: ?>
+                                    <td><span class="badge badge-info">Pindah -> Reguler</span></td>
+                                    <?php endif; ?>
+
                                     <?php if ($key->s_biodata == '1'): ?>
                                     <td><?= '<a class="btn btn-xs btn-success" href="javascript:void(0)" title="Show Biodata" onclick="show_biodata(' . "'" . $key->nik . "'" . ')"><i class="fas fa-eye"></i> Biodata</a>'; ?></td>
                                     <?php else: ?>
