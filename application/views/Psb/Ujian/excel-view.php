@@ -93,9 +93,9 @@
 				<td><?= jenis_kelamin($key->jenis_kelamin); ?></td>
 				<td><?= jurusan($key->jurusan); ?></td>
 				<td><?= what_kabupaten($key->kabupaten); ?></td>
-				<td><?= $key->khatak_jali; ?></td>
+				<td><?= $key->khatak_jali. " X 3"; ?></td>
 				<td><?= $key->khatak_kafi; ?></td>
-				<td><?= 50 - ($key->khatak_jali + $key->khatak_kafi); ?></td>
+				<td><?= 50 - (($key->khatak_jali * 3) + $key->khatak_kafi); ?></td>
 				<td><?= $key->jumlah_hafalan; ?></td>
 				<td><?= baik_or_no($key->kualitas_hafalan); ?></td>
 				<td><?= baik_or_no($key->bacaan_sholat); ?></td>

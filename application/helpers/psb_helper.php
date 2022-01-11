@@ -180,5 +180,21 @@ function pernah_or_no($key)
     }
 }
 
+function arr_jadwal_reguler()
+{
+    $array = array();
+    
+    $x1 = strtotime(psb_detail('buka_tes_reguler'));
+    $x2 = strtotime(psb_detail('tutup_tes_reguler'));
+   
+    for ($currentDate = $x1; $currentDate <= $x2;
+        $currentDate += (86400)) {
+        $Store = date('Y-m-d', $currentDate);
+        $jadwal[] = $Store;
+    }
+
+    return $jadwal;
+}
+
 
 ?>

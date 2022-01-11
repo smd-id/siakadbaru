@@ -10,19 +10,34 @@
         function doAjax()
         {
             $.ajax({
-                url : "<?php echo site_url('dashboardpsb/home_data') ?>/",
+                url : "<?php echo base_url('dashboardpsb/home_data') ?>/",
                 type: "GET",
                 dataType: "JSON",
                 success: function(data)
                 {
 
+                    
+
+                    // Detail Jadwal
+                    var detail_jadwal = '';
+                    if (data.detail_jadwal === false ){
+                        detail_jadwal += "<tr><td colspan='2'><b>Tidak Ada Jadwal</b></td></tr>";
+                    } else {
+                        var len_jadwal = Object.keys(data.detail_jadwal).length;
+                        for (var i = 0; i < len_jadwal; i++) {
+                            detail_jadwal +=
+                                '<tr>'+
+                                    '<td>'+data.detail_jadwal[i].tanggal+'</td>'+
+                                    '<td>'+data.detail_jadwal[i].total_peserta+' Orang</td>'+
+                                '</tr>';
+                        }
+                    };
+                    $("#detail_jadwal_show").html(detail_jadwal);
+                    
                     var randomR = Math.floor((Math.random() * 130) + 100);
                     var randomG = Math.floor((Math.random() * 130) + 100);
                     var randomB = Math.floor((Math.random() * 130) + 100);
 
-
-                    console.log(data);
-                    
                     var label_undangan = [];
                     var value_undangan = [];
                     var random_rgb_undangan = [];
