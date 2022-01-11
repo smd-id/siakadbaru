@@ -14,6 +14,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>NIK</th>
+                                    <th>No Ujian</th>
                                     <th>Nama</th>
                                     <th>No Telepon</th>
                                     <th>Asal Sekolah</th>
@@ -34,6 +35,7 @@
                                 <tr>
                                     <td><?= $i; ?></td>
                                     <td><?= $key->nik; ?></td>
+                                    <td><?= $key->no_ujian; ?></td>
                                     <td><?= $key->nama; ?></td>
                                     <td><?= $key->no_telepon; ?></td>
                                     <td><?= $key->asal_sekolah; ?></td>

@@ -21,6 +21,7 @@
                                     <th>Biodata</th>
                                     <th>Berkas</th>                                   
                                     <th>Status Cetak</th>
+                                    <th>Status Daftar Ulang</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,6 +48,14 @@
                                     <?php endif; ?>
 
                                     <td><?= sudah_belum($key->s_cetak); ?></td>
+
+                                    <?php if ($key->s_daftar_ulang == '0'): ?>
+                                    <td><span class="badge badge-danger">Belum</span></td>
+                                    <?php elseif($key->s_daftar_ulang == '1'): ?>
+                                    <td><span class="badge badge-info">Mohon Verifikasi</span></td>
+                                    <?php elseif($key->s_daftar_ulang == '2'): ?>
+                                    <td><span class="badge badge-success">Sudah</span></td>
+                                    <?php endif; ?>
                                 
                                 </tr>
                                 <?php $i++; ?>
