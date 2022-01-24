@@ -44,7 +44,7 @@ header("Content-Disposition: attachment; filename=hasil.xls");
 				<td colspan="3">KETERANGAN TAMBAHAN LAINNYA</td>
 			</tr>
 			<tr>
-				<td rowspan="2">KHATA' JALI</td>
+				<td rowspan="2">KHATA' JALI <br>(x3)</td>
 				<td rowspan="2">KHATA' KHAFI</td>
 				<td rowspan="2">TOTAL SKOR</td>
 				<td rowspan="2">JUMLAH HAFALAN</td>

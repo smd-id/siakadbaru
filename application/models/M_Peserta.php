@@ -227,4 +227,91 @@ class M_Peserta extends CI_Model
         return $query;
     }
     
+    public function getalljadwal()
+    {
+        $query = $this->db->select('jadwal_ujian')
+                ->distinct('jadwal_ujian')
+                ->from($this->table)
+                ->where("jalur_awal", 'reguler')
+                ->where("s_payment", '1')        
+                ->where("s_cetak", '1')
+                ->get(); 
+
+        return $query;
+    }
+
+    public function getruangcat()
+    {
+        $query = $this->db->select('ruang_cat')
+                ->distinct('ruang_cat')
+                ->from($this->table)
+                ->where("jalur_awal", 'reguler')
+                ->where("s_payment", '1')        
+                ->where("s_cetak", '1')
+                ->get(); 
+
+        return $query;
+    }
+
+    public function getsesicat()
+    {
+        $query = $this->db->select('sesi_cat')
+                ->distinct('sesi_cat')
+                ->from($this->table)
+                ->where("jalur_awal", 'reguler')
+                ->where("s_payment", '1')        
+                ->where("s_cetak", '1')
+                ->order_by("sesi_cat", 'ASC')
+                ->get(); 
+
+        return $query;
+    }
+
+    public function getruanglisan()
+    {
+        $query = $this->db->select('ruang_lisan')
+                ->distinct('ruang_lisan')
+                ->from($this->table)
+                ->where("jalur_awal", 'reguler')
+                ->where("s_payment", '1')        
+                ->where("s_cetak", '1')
+                ->order_by("ruang_lisan", 'ASC')
+                ->get(); 
+
+        return $query;
+    }
+
+    public function getsesilisan()
+    {
+        $query = $this->db->select('sesi_lisan')
+                ->distinct('sesi_lisan')
+                ->from($this->table)
+                ->where("jalur_awal", 'reguler')
+                ->where("s_payment", '1')        
+                ->where("s_cetak", '1')
+                ->order_by("sesi_lisan", 'ASC')
+                ->get(); 
+
+        return $query;
+    }
+
+    public function getcatby($jadwal, $ruang, $sesi)
+    {
+        $this->db->where('jadwal_ujian', $jadwal);
+        $this->db->where('ruang_cat', $ruang);
+        $this->db->where('sesi_cat', $sesi);
+        $this->db->from($this->table);
+
+        return $this->db->get();
+    }
+    
+    public function getlisanby($jadwal, $ruang, $sesi)
+    {
+        $this->db->where('jadwal_ujian', $jadwal);
+        $this->db->where('ruang_lisan', $ruang);
+        $this->db->where('sesi_lisan', $sesi);
+        $this->db->from($this->table);
+
+        return $this->db->get();
+    }
 }

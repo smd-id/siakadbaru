@@ -43,7 +43,7 @@
 				<td colspan="3">KETERANGAN TAMBAHAN LAINNYA</td>
 			</tr>
 			<tr>
-				<td rowspan="2">KHATA' JALI</td>
+				<td rowspan="2">KHATA' JALI <br>(x3)</td>
 				<td rowspan="2">KHATA' KHAFI</td>
 				<td rowspan="2">TOTAL SKOR</td>
 				<td rowspan="2">JUMLAH HAFALAN</td>
@@ -93,7 +93,7 @@
 				<td><?= jenis_kelamin($key->jenis_kelamin); ?></td>
 				<td><?= jurusan($key->jurusan); ?></td>
 				<td><?= what_kabupaten($key->kabupaten); ?></td>
-				<td><?= $key->khatak_jali. " X 3"; ?></td>
+				<td><?= $key->khatak_jali; ?></td>
 				<td><?= $key->khatak_kafi; ?></td>
 				<td><?= 50 - (($key->khatak_jali * 3) + $key->khatak_kafi); ?></td>
 				<td><?= $key->jumlah_hafalan; ?></td>
