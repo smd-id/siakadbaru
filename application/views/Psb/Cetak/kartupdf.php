@@ -416,7 +416,6 @@ $tandatangan = '
                 <br />
                 <br />
                 <br />
-                <br />
                 ( '.$output->nama.' )
             </td>
         </tr>
