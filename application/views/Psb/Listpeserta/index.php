@@ -51,6 +51,13 @@
                                 <span class="badge bg-success"><?= $total_belum_cetak; ?></span>
                                 <i class="fas fa-users"></i> Belum Cetak Kartu
                             </a>
+
+                            <br>
+                            <hr>
+
+                            <a class="btn btn-app bg-success" href="<?= base_url('listpeserta/regulertoexcel'); ?>">
+                                <i class="fas fa-file-excel"></i> Data Excel Lengkap
+                            </a>
                             
                         </center>                        
                     </div>
