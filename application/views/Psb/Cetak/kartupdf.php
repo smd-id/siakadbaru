@@ -85,6 +85,10 @@ $body = '
                     <td width="160">Ruang Ujian Lisan (Wawancara)</td>
                     <td>: <b>'.$output->ruang_lisan.'</b> - Pukul : '.$output->sesi_lisan.'</td>
                </tr>
+               <tr>
+                    <td width="160"><b>Wawancara Orang Tua</b></td>
+                    <td>: <b>Di Tentukan Panitia</b> - Pukul : '.$output->sesi_cat.'</td>
+               </tr>
           </tbody>
      </table>
 ';
