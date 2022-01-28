@@ -68,13 +68,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Jali</label>
-                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" required>
+                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Kafi</label>
-                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" required>
+                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
