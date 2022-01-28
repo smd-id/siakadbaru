@@ -81,6 +81,14 @@ class M_Role extends CI_Model
 
         return $query->result();
     }
+
+    public function getallnolimit()
+    {
+        $this->db->from($this->table);
+        $query = $this->db->get();
+
+        return $query->result();
+    }
     public function get_by_id($id)
     {
         $this->db->from($this->table);

@@ -15,7 +15,7 @@
 			
 			$data['detail'] = $this->_ci->M_Schooldetail->get();
 			$data['userdata'] = $this->_ci->M_Users->get_by_id($this->_ci->session->userdata['id']);
-			$data['roles'] = $this->_ci->M_Role->getall();
+			$data['roles'] = $this->_ci->M_Role->getallnolimit();
 
 			if ($data != NULL) {
 				return $this->_ci->load->view('_layout/_Template', $data, TRUE);
