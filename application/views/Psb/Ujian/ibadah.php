@@ -62,7 +62,8 @@
                         <div class="col-md-12">
                             <form id="form_wawancara" method="post" class="form-horizontal">
                                 <input type="hidden" name="nik" id="nik" required>
-                                <input type="hidden" name="step_2" id="step_2" value="1" required>
+                                <input type="hidden" name="step_2" value="1" required>
+                                <input type="hidden" name="users_step_2" value="<?= $this->session->userdata['id'];?>" required>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">

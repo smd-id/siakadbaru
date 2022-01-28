@@ -62,24 +62,25 @@
                         <div class="col-md-12">
                             <form id="form_wawancara" method="post" class="form-horizontal">
                                 <input type="hidden" name="nik" id="nik" required>
-                                <input type="hidden" name="step_1" id="step_1" value="1" required>
+                                <input type="hidden" name="step_1" value="1" required>
+                                <input type="hidden" name="users_step_1" value="<?= $this->session->userdata['id'];?>" required>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Jali</label>
-                                        <input type="text" name="khatak_jali" id="khatak_jali" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" onkeyup="count()" required>
+                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" onkeyup="count()" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Kafi</label>
-                                        <input type="text" name="khatak_kafi" id="khatak_kafi" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" onkeyup="count()" required>
+                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" onkeyup="count()" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Total Skor</label>
-                                        <input type="text" class="form-control total_skor" readonly>
+                                        <input type="number" class="form-control total_skor" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +88,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Jumlah Hafalan</label>
-                                        <input type="text" name="jumlah_hafalan" id="jumlah_hafalan" min="0" max="30" placeholder="Isikan hanya angka dari 0 s/d 30" class="form-control" required>
+                                        <input type="number" name="jumlah_hafalan" id="jumlah_hafalan" min="0" max="30" placeholder="Isikan hanya angka dari 0 s/d 30" class="form-control" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">

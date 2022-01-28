@@ -44,4 +44,14 @@ function check_izin_psb()
         return FALSE;
     }
 }
+
+function sessinfo()
+    {
+        $ci = &get_instance();
+        $ci->load->model('M_Users');
+
+        $sess_id = $ci->session->userdata('id');
+        $get = $ci->M_Users->get_by_id($sess_id)->row();
+        return $get;
+    }
 ?>

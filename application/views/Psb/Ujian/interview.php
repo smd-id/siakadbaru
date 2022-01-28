@@ -80,7 +80,8 @@
                         <div class="col-md-12">
                             <form id="form_wawancara" method="post" class="form-horizontal">
                                 <input type="hidden" name="nik" id="nik" required>
-                                <input type="hidden" name="step_3" id="step_3" value="1" required>
+                                <input type="hidden" name="step_3" value="1" required>
+                                <input type="hidden" name="users_step_3" value="<?= $this->session->userdata['id'];?>" required>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -191,6 +192,11 @@
                                           <label>Alasan Memilih Jurusan : </label>
                                           <input type="text" id="jurusan_display" class="form-control" readonly>
                                           <textarea type="text" name="alasan_memilih_jurusan" id="alasan_memilih_jurusan" class="form-control" required></textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label>Bagaimana Hubungan Dengan Orang Tua : </label>
+                                          <textarea type="text" name="hubungan_ortu" id="hubungan_ortu" class="form-control" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-4">

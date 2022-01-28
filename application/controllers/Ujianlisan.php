@@ -82,9 +82,7 @@ class Ujianlisan extends CI_Controller {
                 'prestasi_3'            => $get->prestasi_3,
                 'prestasi_4'            => $get->prestasi_4,
                 'prestasi_5'            => $get->prestasi_5,
-                's_step_1'              => $check->step_1,
-                's_step_2'              => $check->step_2,
-                's_step_3'              => $check->step_3,
+                'data_soal'             => $check,
                 
             ];
             echo json_encode($data);

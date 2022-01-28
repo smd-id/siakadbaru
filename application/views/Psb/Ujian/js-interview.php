@@ -19,21 +19,23 @@ function cari_data()
         dataType: "JSON",
         success: function(data)
         {
-            if (data.s_step_3 == "1"){
-                mySwalalert('Sudah Pernah Ikut Step Ini', 'warning');
-                $('#identitas').addClass('d-none');
-                $('#soal').addClass('d-none');
-                $('#form_wawancara')[0].reset();
-            } else {
-                $('#identitas').removeClass('d-none');
-                $('#soal').removeClass('d-none');
-    
-                var html = '';
-                $.each(data,function(key,value){
-                    var keys_id = "#"+key;
-                    $(keys_id).val(value);
-                });
+            if (data.data_soal.step_3 == 1){
+                mySwalalert('Sudah Pernah Ikut Step Ini, Hati Hati Jika ingin merubah data', 'warning');
             }
+
+            $('#identitas').removeClass('d-none');
+            $('#soal').removeClass('d-none');
+
+            var html = '';
+            $.each(data,function(key,value){
+                var keys_id = "#"+key;
+                $(keys_id).val(value);
+            });
+
+            $.each(data.data_soal,function(key,value){
+                var keys_id = "#"+key;
+                $(keys_id).val(value);
+            });
 
         },
         error: function (jqXHR, textStatus, errorThrown)
