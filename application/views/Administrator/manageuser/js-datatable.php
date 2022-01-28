@@ -60,7 +60,6 @@ function edit_data(id)
     $('#form')[0].reset(); // reset form on modals
     $('.form-group').removeClass('has-error'); // clear error class
     $('.help-block').empty(); // clear error string
-    $('#password').attr('disabled',true); //set button disable
 
     //Ajax Load data from ajax
     $.ajax({

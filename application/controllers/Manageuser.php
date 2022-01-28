@@ -103,17 +103,32 @@ class Manageuser extends CI_Controller
 
     public function ajax_update()
     {
-        $data = [
-            'username'  => $this->input->post('username'),
-            'name'      => $this->input->post('name'),
-            'role_id'   => $this->input->post('role_id'),
-            'nik'   => $this->input->post('nik'),
-            'email'   => $this->input->post('email'),
-            'whatsapp'  => $this->input->post('whatsapp'),
-            'izin_psb'  => $this->input->post('izin_psb'),
-            'status'    => $this->input->post('status'),
-            'profile_picture' => 'default.png',
-        ];
+        if ($this->input->post('password') !== ""){
+            $data = [
+                'username'  => $this->input->post('username'),
+                'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
+                'name'      => $this->input->post('name'),
+                'role_id'   => $this->input->post('role_id'),
+                'nik'   => $this->input->post('nik'),
+                'email'   => $this->input->post('email'),
+                'whatsapp'  => $this->input->post('whatsapp'),
+                'izin_psb'  => $this->input->post('izin_psb'),
+                'status'    => $this->input->post('status'),
+                'profile_picture' => 'default.png',
+            ];
+        } else {
+            $data = [
+                'username'  => $this->input->post('username'),
+                'name'      => $this->input->post('name'),
+                'role_id'   => $this->input->post('role_id'),
+                'nik'   => $this->input->post('nik'),
+                'email'   => $this->input->post('email'),
+                'whatsapp'  => $this->input->post('whatsapp'),
+                'izin_psb'  => $this->input->post('izin_psb'),
+                'status'    => $this->input->post('status'),
+                'profile_picture' => 'default.png',
+            ];
+        }
         $this->M_Users->update($this->input->post('id'), $data);
         echo json_encode(array("status" => true));
     }

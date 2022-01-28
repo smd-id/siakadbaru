@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input type="text" class="form-control" id="password" name="password">
+                                    <input type="text" class="form-control" id="password" name="password" placeholder="Biarkan Kosong Jika Tidak ingin merubah password">
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
