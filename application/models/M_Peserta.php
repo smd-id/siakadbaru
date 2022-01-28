@@ -211,6 +211,14 @@ class M_Peserta extends CI_Model
         return $query->row();
     }
 
+    public function get_all_by($by, $val)
+    {
+        $this->db->where($by, $val);
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function count_by_jadwal($tanggal)
     {
         $query = $this->db
