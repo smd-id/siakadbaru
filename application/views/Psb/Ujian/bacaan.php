@@ -68,19 +68,19 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Jali</label>
-                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" onkeyup="count()" required>
+                                        <input type="number" name="khatak_jali" id="khatak_jali" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Khatak Kafi</label>
-                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" min="0" max="50" onkeyup="count()" required>
+                                        <input type="number" name="khatak_kafi" id="khatak_kafi" class="form-control" placeholder="Isikan hanya angka dari 0 s/d 50" required>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
                                         <label>Total Skor</label>
-                                        <input type="number" class="form-control total_skor" readonly>
+                                        <input type="text" class="form-control total_skor" readonly>
                                         </div>
                                     </div>
                                 </div>

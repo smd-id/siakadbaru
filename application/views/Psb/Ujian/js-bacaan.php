@@ -4,17 +4,23 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+    $('#khatak_jali').change(function() {
+        counterss();
+    });
+    $('#khatak_kafi').change(function() {
+        counterss();
+    });
 
 });
 
-function count()
+function counterss()
 {
     var total = 50;
-    var k_jali = $('#khatak_jali').val();
+    var k_jali = $('#khatak_jali').val() * 3;
     var k_kafi = $('#khatak_kafi').val();
     
     var hasil = total - (parseInt(k_jali) + parseInt(k_kafi));
-    $('.total_skor').val(hasil+" Point")
+    $('.total_skor').val(hasil+" Point");
 }
 
 function cari_data()
