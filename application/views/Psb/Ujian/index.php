@@ -23,6 +23,8 @@
                     </center>
                 </div>
             </div>
+
+            <?php if(check_izin_psb() == TRUE): ?>
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
@@ -41,6 +43,7 @@
                     </center>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>
