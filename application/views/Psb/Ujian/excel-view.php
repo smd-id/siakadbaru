@@ -26,7 +26,7 @@
 	<table class="table table-striped c">
 		<thead>
 			<tr>
-				<td colspan="39"><h3>BLANKO WAWANCARA PSB 2021</h3></td>
+				<td colspan="43"><h3>BLANKO WAWANCARA PSB 2021</h3></td>
 			</tr>
 			<tr>
 				<td rowspan="3">NO</td>
@@ -38,9 +38,10 @@
 				<td rowspan="3">DOMISILI</td>
 				<td colspan="5">TES BACAAN AL-QURAN</td>
 				<td colspan="5">TES PRAKTIK IBADAH DAN QIRAATUL KUTUB</td>
-				<td colspan="16">TES SELEKSI INTERVIEW</td>
+				<td colspan="17">TES SELEKSI INTERVIEW</td>
 				<td colspan="3">REKOMENDASI</td>
 				<td colspan="3">KETERANGAN TAMBAHAN LAINNYA</td>
+				<td colspan="3">PEWAWANCARA</td>
 			</tr>
 			<tr>
 				<td rowspan="2">KHATA' JALI <br>(x3)</td>
@@ -67,12 +68,16 @@
 				<td rowspan="2">PELAJARAN YANG TIDAK DISUKAI</td>
 				<td rowspan="2">CITA-CITA</td>
 				<td rowspan="2">ALASAN MEMILIH JURUSAN</td>
+				<td rowspan="2">HUBUNGAN DENGAN ORANG TUA</td>
 				<td rowspan="2">TES BACA AL-QUR'AN</td>
 				<td rowspan="2">TES PRAKTIK IBADAH</td>
 				<td rowspan="2">INTERWIEW</td>
 				<td rowspan="2">TES BACA AL-QUR'AN</td>
 				<td rowspan="2">TES PRAKTIK IBADAH</td>
 				<td rowspan="2">INTERWIEW</td>
+				<td rowspan="2">TES BACAAN OLEH</td>
+				<td rowspan="2">TES PRAKTIK IBADAH OLEH</td>
+				<td rowspan="2">INTERWIEW OLEH</td>
 			</tr>
 			<tr>
 				<td>AKADEMIK</td>
@@ -119,12 +124,16 @@
 				<td><?= $key->pelajaran_tidak_suka; ?></td>
 				<td><?= $key->cita_cita; ?></td>
 				<td><?= $key->alasan_memilih_jurusan; ?></td>
+				<td><?= $key->hubungan_ortu; ?></td>
 				<td><?= rekom_or_no($key->rekomendasi_hafalan); ?></td>
 				<td><?= rekom_or_no($key->rekomendasi_ibadah); ?></td>
 				<td><?= rekom_or_no($key->rekomendasi_interview); ?></td>
 				<td><?= $key->keterangan_hafalan; ?></td>
 				<td><?= $key->keterangan_ibadah; ?></td>
 				<td><?= $key->keterangan_interview; ?></td>
+				<td><?= usersinfo($key->users_step_1)->name; ?></td>
+				<td><?= usersinfo($key->users_step_2)->name; ?></td>
+				<td><?= usersinfo($key->users_step_3)->name; ?></td>
 			</tr>
 		<?php $i++; ?>	
 		<?php endforeach; ?>

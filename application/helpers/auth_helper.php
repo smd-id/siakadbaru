@@ -45,13 +45,12 @@ function check_izin_psb()
     }
 }
 
-function sessinfo()
+function usersinfo($id)
     {
         $ci = &get_instance();
         $ci->load->model('M_Users');
 
-        $sess_id = $ci->session->userdata('id');
-        $get = $ci->M_Users->get_by_id($sess_id)->row();
+        $get = $ci->M_Users->get_by_id($id);
         return $get;
     }
 ?>
