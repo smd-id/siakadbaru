@@ -4,6 +4,7 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+    counterss();
     $('#khatak_jali').change(function() {
         counterss();
     });
