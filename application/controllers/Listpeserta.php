@@ -35,6 +35,7 @@ class Listpeserta extends CI_Controller
                 'surat_sehat'               => $get->surat_sehat,
                 'surat_tidakpindahjurusan'  => $get->surat_tidakpindahjurusan,
                 'bpjs'                      => $get->bpjs,
+                'kartu_nisn'                => $get->kartu_nisn,
                 'kip'                       => $get->kip,
                 'ktp_ayah'                  => $get->ktp_ayah,
                 'ktp_ibu'                   => $get->ktp_ibu,

@@ -88,6 +88,13 @@
                                         <div class="float-right text-primary" id="file_pasphoto"></div>
                                     </a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link">
+                                        Kartu NISN
+                                        <div class="float-right text-primary" id="file_kartu_nisn"></div>
+                                    </a>
+                                </li>
                             
                                 <li class="nav-item">
                                     <a class="nav-link">
@@ -164,7 +171,7 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link">
-                                        BPJS
+                                        BPJS / ASKES
                                         <span class="float-right text-primary" id="file_bpjs"></span>
                                     </a>
                                 </li>
