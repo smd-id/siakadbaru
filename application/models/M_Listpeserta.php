@@ -143,8 +143,6 @@ class M_Listpeserta extends CI_Model
         $this->db->where('s_payment', '1');
         $this->db->where('s_biodata', '1');
         $this->db->where('s_file', '1');
-        $this->db->where('s_lulus_adm', '1');
-        $this->db->where('s_cetak', '1');
         $this->db->from($this->table);
         $query = $this->db->get();
         return $query;
