@@ -134,7 +134,7 @@ function show_biodata(nik)
 function viewFile(d)
 {
     var path = d.getAttribute("data-id");
-    var url = "https://psb.ruhulislam.com/uploads/"+path;
+    var url = "https://cdn.ruhulislam.com/uploads/"+path;
 
     newwindow=window.open(url,'View File','height=720,width=1280,screenX=400,screenY=350');
         if (window.focus) {newwindow.focus()}
