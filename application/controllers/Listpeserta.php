@@ -143,7 +143,7 @@ class Listpeserta extends CI_Controller
     {
         $data = [
 			'title' => "Report Excel",
-            'result'  =>  $this->M_Listpeserta->get_lengkap_excel('reguler')->result()
+            'result'  =>  $this->M_Listpeserta->get_lengkap_excel()->result()
 		];
         $this->load->view('Psb/Listpeserta/excel-reguler', $data);
     }
