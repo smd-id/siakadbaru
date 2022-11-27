@@ -27,6 +27,8 @@ class Api extends CI_Controller {
       $this->M_Wawancarapsb->insert($load);
     }
 
+    break;
+
   }
 
 }
