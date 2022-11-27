@@ -15,7 +15,7 @@ class Api extends CI_Controller {
 
 
     $data = $this->M_Peserta->get_all_by('jalur', 'reguler');
-
+    
     foreach ($data as $key) {
       $load = [
         'nik'     => $key->nik,
@@ -26,8 +26,6 @@ class Api extends CI_Controller {
 
       $this->M_Wawancarapsb->insert($load);
     }
-
-    break;
 
   }
 
