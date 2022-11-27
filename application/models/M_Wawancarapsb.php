@@ -54,7 +54,7 @@ class M_Wawancarapsb extends CI_Model
 
     public function insert($data)
     {
-        $this->db->insert($this->table, $data);
+        $this->db->insert_batch($this->table, $data);
         return true;
     }
     
