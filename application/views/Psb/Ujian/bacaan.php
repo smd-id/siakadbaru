@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                        <label>Rekomendasi Hafalan</label>
+                                        <label>Rekomendasi Al-Quran</label>
                                         <select class="form-control" name="rekomendasi_hafalan" id="rekomendasi_hafalan" required>
                                             <option value="">Pilih</option>
                                             <option value="1">REKOM SEKALI</option>
