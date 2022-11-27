@@ -14,8 +14,7 @@ class Api extends CI_Controller {
     $this->load->model('M_Wawancarapsb');
 
 
-    $data = $this->M_Peserta->get_all_by('jalur', 'reguler');
-    
+    $data = $this->M_Peserta->get_all_by('s_lulus_adm', '1');
     foreach ($data as $key) {
       $load = [
         'nik'     => $key->nik,
