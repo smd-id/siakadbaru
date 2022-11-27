@@ -21,8 +21,8 @@ class Api extends CI_Controller {
         'step_2'  => '0',
         'step_3'  => '0',
       );
+      $this->M_Wawancarapsb->insert($data);
     }
-    $this->M_Wawancarapsb->insert($data);
 
   }
 
